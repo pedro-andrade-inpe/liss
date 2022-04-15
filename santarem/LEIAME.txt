@@ -1,0 +1,31 @@
+1) Pasta “ bd_shp”: Estão disponibilizados os shapefiles de pontos com as localidades, de linha do trajeto e do poligono representando o trabalho de camp.
+
+a)	pontos_ST13.shp - pontos com as localidades
+
+Atributos:
+	Id – identificador único de cada comunidades
+	COMUNIDADES – Nome das comunidades visitadas
+	Foto_CMM – foto da comunidades
+	Foto_Uso – Foto representando algum tipo de uso da comunidades
+
+b)	Trajeto_ST13.shp - linha do trajeto
+
+c)	Poligono_ST13.shp – poligono do trabalho de campo
+
+Atributos:
+	CAMPO – Nome do campo
+	Equipe – Foto da Equipe
+	Trabalho – Foto do trabalho de campo
+	Ano – Ano que ocorreu o campo
+	Relatório – Link do relatório 
+	Agencia_1 – Foto da agencia financionadora
+	Agencia_2 – Foto da segunda agencia financiadora 
+
+2) Pasta “Agencia_1”: Imagem da agencia financiadora
+3) Pasta “Agencia_2”: Imagem da agencia financiadora
+4) Pasta “Equipe”:  Contém a foto da equipe
+5) Pasta “Foto_CMM”:  Contém as fotos das comunidades visitadas
+6)Pasta “Foto_uso”: Contém as fotos que caracterizam algum uso
+7) Pasta “Trabalho”:  Contém a foto do trabalho de campo
+8) Arquivo QGIS "projeto_santarem": contém o banco de dados
+9) Arquivo em doc "textos descrevendo o trabalho": textos em inglês e português.
