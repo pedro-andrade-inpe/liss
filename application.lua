@@ -20,12 +20,13 @@ Application{
 				author = "LiSS",
 			}
 
-			report:addText("bla bla bla<a href = \"www.terrame.org\">here</a>")
-
             local link = "https://cdn.rawgit.org/cdn.jsdelivr.net/gh/pedro-andrade-inpe/liss@master/"..
               cell.app.."/"..cell.app.."WebMap/index.html"
 
             report:addText(link)
+
+			report:addText("bla bla bla<a href = \"www.terrame.org\">here</a>")
+
 			return report
 		end
 	}
