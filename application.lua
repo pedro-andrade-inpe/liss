@@ -20,10 +20,10 @@ Application{
 				author = "LiSS",
 			}
 
-            local link = "https://combinatronics.com/pedro-andrade-inpe/liss/"..
+            local link = "https://combinatronics.com/pedro-andrade-inpe/liss/main/"..
               cell.app.."/"..cell.app.."WebMap/index.html"
 
-			report:addText("See the application <a href = \""..link.."\">here</a>")
+			report:addText("See the application <a href = \""..link.."\" target=\"_blank\">here</a>")
 
 			return report
 		end
