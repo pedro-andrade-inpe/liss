@@ -9,6 +9,7 @@ Application{
 	project = "fieldworks.tview",
 	description = description,
 	base = "roadmap",
+    zoom = 7,
 	template = {navbar = "darkblue", title = "white"},
 	fieldworks = View{
         color = "Set2",
