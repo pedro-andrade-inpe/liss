@@ -1,7 +1,7 @@
 import("publish")
 
 local description = [[
-	LiSS webmapping applications.
+	This webpage describes LiSS fieldworks in the Brazilian Amazonia. Please click in a box to see more information and to navigate through specific applications.
 ]]
 
 Application{
@@ -11,9 +11,9 @@ Application{
 	base = "roadmap",
 	template = {navbar = "darkblue", title = "white"},
 	fieldworks = View{
-        	color = "Set2",
+        color = "Set2",
 		select = "app",
-        	description = "Trabalhos de campo.",
+        description = "Trabalhos de campo.",
 		report = function(cell)
 			local report = Report{
 				title = cell.app,

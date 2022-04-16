@@ -1,7 +1,9 @@
 import("publish")
 
 local description = [[
-	This report ....
+The report presents the methodology and results obtained during fieldwork in Upland communities in the Planalto Santareno region, municipalities of Belterra, Mojuí dos Campos, and Santarém, state of Pará, from September 6th to 26th in 2013. This work complements the fieldwork carried out previously in the riverside communities of Tapajós and Arapiuns in 2009 and 2012, respectively. The main objective is to identify and characterize communities regarding infrastructure, health and education services, as well as land uses and land cover, and rural production.
+Source: DAL’ASTA, A. P.; SOUZA, A. R. DE; PINHO, C. M. D. DE; SOARES, F. DA R.; REGO, G. F. DE J.; SIQUEIRA, J. M. DE; ESCADA, M. I. S.; BRIGATTI, N.; AMARAL, S.; CAMILOTTI, V. L.; DÓRIA, V. E. M.; COSTA, L. C. DA. As Comunidades De Terra Firme Do Sudoeste Do Pará: População, Infraestrutura, Serviços, Uso Da Terra E Conectividades. São José dos Campos: INPE, 2017. Disponível em: http://urlib.net/8JMKD3MGP3W34P/3PAAHQ5
+
 ]]
 
 Application{
@@ -24,15 +26,14 @@ Application{
 	villages = View{
 		download = true,
 		description = "Settlements corresponded to agrovilas, villages and communities.",
-		select = {"CMM", "TIPO"},
+		select = {"COMUNIDADE", "micon"},
 		icon = {"home", "forest"},
-		label = {"PA", "cmm"},
+		label = {"home", "forest"},
 		report = function(cell)
 			local mreport = Report{
 				title = cell.COMUNIDADE,
 				author = "Dal'Asta et. al (2015)"
 			}
-
 
 --            mreport:addImage("photos/"..cell.Nome..".JPG")
 

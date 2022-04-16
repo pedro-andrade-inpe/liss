@@ -29,7 +29,7 @@
 import("gis")
 
 Project{
-	title = "The communities of BR230 (PA)",
+	title = "Upland communities in the Planalto Santareno region (PA)",
 	author = "Dal'Asta, et al.",
 	file = "santarem.tview",
 	clean = true,

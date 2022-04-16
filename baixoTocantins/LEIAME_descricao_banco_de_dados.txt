@@ -1,0 +1,18 @@
+1) bd_shp (pasta): dispõe de todos os shapefiles associados com as missões do Baixo Tocantins (2018 e 2019)
+	a) full_extension_trajectories.shp - polígono representando área do trabalho de campo;
+	b) trajectories_full - vetor de trajetorias percorridas até as localidades nas quais foram registrados questionários;
+	c) pontos_gps_2018_2019_full - pontos representando locais nos quais foram aplicados questionários de localidades;
+		DESCRIÇÃO DOS ATRIBUTOS
+		id - identificador unico de campo associado à entrada do GPS;
+		time - hora exata de aquisição do ponto;
+		year - especificação do ano de coleta do ponto;
+		pic_path - referencia ao endereço da imagem representativa de campo (em bd_pic_field_201x - sendo x o ano em questão);
+		name - nome da comunidade;
+		drone_path - referencia ao endereço da imagem de drone (em bd_pic_drone_2019, imagens drone disponíveis apenas para 2019);
+		Uso - referencia ao endereço da imagem representativa dos usos e cobertura da terra das localidades de interesse;
+2) bd_pic_drone_2019 (pasta): Fotos de das localidades, disponíveis apenas para o trabalho de campo 2019;
+3) bd_pic_field_2018 (pasta): Fotos de campo específicas de cada localidades, obtidas durante as entrevistas;
+4) foto_equipe (pasta): Foto representativa de toda a equipe presente no campo de 2019;
+5) foto_agencias (pasta): Imagens das agências de fomento envolvidas no projeto (bolsas, fundos, diários, etc);
+6) foto_trabalho_campo (pasta):	Foto representativa da incursão em campo. 
+7) Uso: fotos relativas ao atributo "Uso" da camada pontos_gps_2018_2019_full.  
