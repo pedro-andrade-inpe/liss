@@ -6,27 +6,27 @@
   <Author>LiSS</Author>
 
   <te_da:DataSourceList xmlns:te_common="http://www.terralib.org/schemas/common">
-    <te_da:DataSource access_driver="OGR" id="5ef16f36-a3b7-49b2-9885-c609ba8750a4" type="OGR">
+    <te_da:DataSource access_driver="OGR" id="28b90d90-ce13-4be9-855f-d69e5ce6efe9" type="OGR">
       <te_da:Title>fieldworks</te_da:Title>
       <te_da:Description>Created on TerraME</te_da:Description>
-      <te_da:URI>file%3A%2F%2FC%3A%2FUsers%2Fpedro%2FDropbox%2Fpesquisa%2F2022%2Fpublish-artigo-trabalhos-campo%2Ffieldworks.shp</te_da:URI>
+      <te_da:URI>file%3A%2F%2FC%3A%2FUsers%2Fpedro%2FDropbox%2Fgithub%2Fliss%2Ffieldworks.shp</te_da:URI>
     </te_da:DataSource>
   </te_da:DataSourceList>
 
   <ComponentList/>
 
   <te_map:LayerList>
-    <te_map:DataSetLayer id="1304fb10-d8cc-4cba-a4c8-9a211844b96e">
+    <te_map:DataSetLayer id="797196db-962d-426b-a444-54bed5f13605">
       <te_map:Title>fieldworks</te_map:Title>
       <te_map:Visible>NOT_VISIBLE</te_map:Visible>
       <te_map:Encoding>ISO-8859-1</te_map:Encoding>
       <te_map:DataSetName>fieldworks</te_map:DataSetName>
-      <te_map:DataSourceId>5ef16f36-a3b7-49b2-9885-c609ba8750a4</te_map:DataSourceId>
+      <te_map:DataSourceId>28b90d90-ce13-4be9-855f-d69e5ce6efe9</te_map:DataSourceId>
       <te_map:SRSInfo>
         <te_map:SRID>4326</te_map:SRID>
         <te_map:Proj4>+proj=longlat +datum=WGS84 +no_defs</te_map:Proj4>
       </te_map:SRSInfo>
-      <te_map:Extent llx="-56.249275853483894" lly="-4.503264096193794" urx="-53.48758474475774" ury="-2.2507759677589787"/>
+      <te_map:Extent llx="-56.249275853483894" lly="-4.503264096193794" urx="-49.434725999999998" ury="-2.0890029999999999"/>
       <te_map:RendererId>ABSTRACT_LAYER_RENDERER</te_map:RendererId>
       <te_map:CompositionMode>0</te_map:CompositionMode>
       <te_map:Style>
