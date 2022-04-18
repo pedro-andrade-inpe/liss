@@ -1,6 +1,6 @@
 {
 "type": "FeatureCollection",
-"name": "points2",
+"name": "points",
 "features": [
 { "type": "Feature", "properties": { "id": "460", "time": "05\/08\/2018 17:02:18", "year": 2018, "pic_path": "DSCN6510", "name": "Catalão", "drone_path": "NO", "Uso": "NO", "micon": "home", "micon2": 1.0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -49.434726, -2.390818 ] ] } },
 { "type": "Feature", "properties": { "id": "572", "time": "07\/08\/2018 10:59:40", "year": 2018, "pic_path": "DSCN6634", "name": "Cantanzal", "drone_path": "DJI_0266", "Uso": "NO", "micon": "home", "micon2": 1.0 }, "geometry": { "type": "MultiPoint", "coordinates": [ [ -49.514104, -2.666993 ] ] } },

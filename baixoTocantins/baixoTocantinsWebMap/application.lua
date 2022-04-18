@@ -9,7 +9,7 @@ Source: DAL’ASTA, A. P.; SOUZA, A. R. DE; PINHO, C. M. D. DE; SOARES, F. DA R.
 
 Application{
     key = "AIzaSyA1coAth-Bo7m99rnxOm2oOBB88AmaSbOk",
-	project = "santarem.tview",
+	project = "baixoTocantins.tview",
 	description = description,
 	base = "roadmap",
 	clean = true,
@@ -27,7 +27,7 @@ Application{
 	},
     --]]
     -- [[
-	points2 = View{
+	points = View{
 		download = true,
 		description = "Settlements corresponded to agrovilas, villages and communities.",
 		select = {"name", "micon2"},
