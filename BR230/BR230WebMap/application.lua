@@ -1,3 +1,4 @@
+-- br230
 import("publish")
 
 local description = [[
@@ -17,7 +18,8 @@ Application{
 	base = "roadmap",
 	clean = true,
 	template = {navbar = "darkblue", title = "white"},
-	trajectory = View{
+    display = false,
+--[[	trajectory = View{
 		description = "Route on the BR230.",
 		width = 3,
 		border = "blue",
@@ -27,6 +29,7 @@ Application{
 			time = 20
 		}
 	},
+    --]]
 	villages = View{
 		download = true,
 		description = "Settlements corresponded to agrovilas, villages and communities.",

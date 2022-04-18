@@ -14,7 +14,9 @@ Application{
 	base = "roadmap",
 	clean = true,
 	template = {navbar = "darkblue", title = "white"},
--- [[
+    display = false,
+
+--[[
     trajectory = View{
 		description = "Route on the BR230.",
 		width = 3,
