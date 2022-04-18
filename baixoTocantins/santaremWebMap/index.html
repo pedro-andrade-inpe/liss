@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+		<title>Upland communities in the Planalto Santareno region (PA)</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+		<link rel="stylesheet" href="./publish.min.css"/>
+	</head>
+	<body>
+		<div class="container">
+			<nav class="navbar navbar-fixed-top navbar-light" style="background-color: rgba(0, 0, 139, 1);" role="navigation">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand custom-font-app-title" style="color: rgba(255, 255, 255, 1);">Upland communities in the Planalto Santareno region (PA)</a>
+					</div>
+					
+				</div>
+			</nav>
+		</div>
+		<div class="navbar-offset"></div>
+		<div id="map-canvas">
+			<div id="map"></div>
+		</div>
+		<div class="row main-row">
+			<div class="col-sm-4 col-md-2 sidebar sidebar-left pull-left">
+				<div class="panel-group sidebar-body" id="accordion-left">
+					<div class="panel panel-default">
+						<div class="panel-heading padding-header" >
+							<h4 class="panel-title custom-font-subtitle">
+								<i class="fa fa-list-alt"></i><a id="layers-title" data-toggle="collapse" href="#layers"> Layers</a>
+								<span class="pull-right slide-submenu"><i class="fa fa-chevron-left"></i></span>
+							</h4>
+						</div>
+						<div id="layers" class="panel-collapse collapse in overflow-y">
+								<div class="panel-body list-group padding-body">
+										<label>
+											<input name="points2" type="checkbox">
+											<a id="points2" href="javascript:void(0);"> Points 2 </a>
+										</label>
+										<label>
+											<input name="trajectory" type="checkbox">
+											<a id="trajectory" href="javascript:void(0);"> Trajectory </a>
+										</label>
+								</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading padding-header">
+							<h4 class="panel-title custom-font-subtitle">
+								<i class="fa fa-list-alt"></i><a id="description-title" data-toggle="collapse" href="#properties"> Description</a>
+							</h4>
+						</div>
+						<div id="properties" class="panel-collapse collapse overflow-y">
+							<div class="panel-body padding-body">
+								<p class="custom-font-body" id="layer-description"></p>
+								<button id="more" type="button" class="btn btn-default custom-font-more" style="display:none;">
+									More
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading padding-header">
+							<h4 class="panel-title custom-font-subtitle">
+								<i class="fa fa-list-alt"></i><a id="legend-title" data-toggle="collapse" href="#legends"> Legend</a>
+							</h4>
+						</div>
+						<div id="legends" class="panel-collapse collapse overflow-y">
+							<div id="legend" class="panel-body padding-body custom-font-legend"></div>
+						</div>
+					</div>
+					<div id="panel-download" class="panel panel-default">
+						<div class="panel-heading padding-header" style="height: 29px;">
+							<h4 class="panel-title custom-font-subtitle">
+								<i class="fa fa-download"></i><a id="download-title"> Download</a>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mini-submenu mini-submenu-left pull-left">
+			<i class="fa fa-list-alt"></i>
+		</div>
+		<img id="loader" src="./default.gif" hidden="hidden"/>
+		<div id="loader-message"><h4 id="loader-message-text"></h4></div>
+		<footer class="navbar-default navbar-fixed-bottom">
+			<div id="footer" class="container-fluid">
+				<p>Powered by package <a href="https://github.com/TerraME/publish" target="_blank">publish</a> of <a href="http://www.terrame.org" target="_blank">TerraME</a>.</p>
+			</div>
+		</footer>
+		<div class="modal fade modal-player" id="modal-app-description" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title custom-font-subtitle">Upland communities in the Planalto Santareno region (PA)</h4>
+					</div>
+					<div class="modal-body">
+						<p class="custom-font-body">The report presents the methodology and results obtained during fieldwork in Upland communities in the Planalto Santareno region, municipalities of Belterra, Moju√≠ dos Campos, and Santar√©m, state of Par√°, from September 6th to 26th in 2013. This work complements the fieldwork carried out previously in the riverside communities of Tapaj√≥s and Arapiuns in 2009 and 2012, respectively. The main objective is to identify and characterize communities regarding infrastructure, health and education services, as well as land uses and land cover, and rural production.
+Source: DAL‚ÄôASTA, A. P.; SOUZA, A. R. DE; PINHO, C. M. D. DE; SOARES, F. DA R.; REGO, G. F. DE J.; SIQUEIRA, J. M. DE; ESCADA, M. I. S.; BRIGATTI, N.; AMARAL, S.; CAMILOTTI, V. L.; D√ìRIA, V. E. M.; COSTA, L. C. DA. As Comunidades De Terra Firme Do Sudoeste Do Par√°: Popula√ß√£o, Infraestrutura, Servi√ßos, Uso Da Terra E Conectividades. S√£o Jos√© dos Campos: INPE, 2017. Dispon√≠vel em: http://urlib.net/8JMKD3MGP3W34P/3PAAHQ5
+</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-info" data-dismiss="modal">Ok</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Catal„o" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Catal„o"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Catal„o">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Cantanzal" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Cantanzal"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Cantanzal">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Tapera" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Tapera"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Tapera">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Icatu" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Icatu"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Icatu">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Matias" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Matias"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Matias">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Furtado" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Furtado"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Furtado">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2PiÁarreiras" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2PiÁarreiras"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2PiÁarreiras">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2AÁaizalCentro" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2AÁaizalCentro"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2AÁaizalCentro">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Fazenda" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Fazenda"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Fazenda">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2RioTentem" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2RioTentem"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2RioTentem">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Mutuac·deBaixo" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Mutuac·deBaixo"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Mutuac·deBaixo">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Mataquiri" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Mataquiri"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Mataquiri">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Caju" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Caju"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Caju">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Vacaria" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Vacaria"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Vacaria">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Caripi" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Caripi"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Caripi">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Matias" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Matias"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Matias">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Livramento2" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Livramento2"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Livramento2">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2BocubaranadaPedra" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2BocubaranadaPedra"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2BocubaranadaPedra">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Umarizal" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Umarizal"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Umarizal">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Mupi" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Mupi"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Mupi">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Aruaru" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Aruaru"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Aruaru">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2VilaNossaSradaConceiÁ„o" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2VilaNossaSradaConceiÁ„o"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2VilaNossaSradaConceiÁ„o">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Cantazal" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Cantazal"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Cantazal">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Mangabeira" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Mangabeira"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Mangabeira">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Viz‚nia" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Viz‚nia"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Viz‚nia">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Furtado" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Furtado"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Furtado">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Mutuac·deBaixo" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Mutuac·deBaixo"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Mutuac·deBaixo">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2RioSantana" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2RioSantana"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2RioSantana">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2S„oJosÈdoIcatu" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2S„oJosÈdoIcatu"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2S„oJosÈdoIcatu">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2TambaÌ-AÁu" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2TambaÌ-AÁu"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2TambaÌ-AÁu">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Catal„o" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Catal„o"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Catal„o">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Cantanzal" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Cantanzal"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Cantanzal">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Tapera" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Tapera"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Tapera">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Icatu" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Icatu"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Icatu">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Matias" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Matias"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Matias">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Furtado" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Furtado"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Furtado">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2PiÁarreiras" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2PiÁarreiras"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2PiÁarreiras">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2AÁaizalCentro" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2AÁaizalCentro"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2AÁaizalCentro">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Fazenda" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Fazenda"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Fazenda">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2RioTentem" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2RioTentem"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2RioTentem">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Mutuac·deBaixo" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Mutuac·deBaixo"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Mutuac·deBaixo">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Mataquiri" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Mataquiri"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Mataquiri">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Caju" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Caju"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Caju">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Vacaria" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Vacaria"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Vacaria">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Caripi" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Caripi"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Caripi">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Matias" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Matias"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Matias">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Livramento2" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Livramento2"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Livramento2">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2BocubaranadaPedra" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2BocubaranadaPedra"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2BocubaranadaPedra">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Umarizal" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Umarizal"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Umarizal">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Mupi" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Mupi"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Mupi">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Aruaru" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Aruaru"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Aruaru">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2VilaNossaSradaConceiÁ„o" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2VilaNossaSradaConceiÁ„o"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2VilaNossaSradaConceiÁ„o">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Cantazal" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Cantazal"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Cantazal">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Mangabeira" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Mangabeira"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Mangabeira">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Viz‚nia" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Viz‚nia"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Viz‚nia">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Furtado" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Furtado"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Furtado">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2Mutuac·deBaixo" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2Mutuac·deBaixo"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2Mutuac·deBaixo">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2RioSantana" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2RioSantana"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2RioSantana">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2S„oJosÈdoIcatu" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2S„oJosÈdoIcatu"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2S„oJosÈdoIcatu">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-points2TambaÌ-AÁu" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-points2TambaÌ-AÁu"> Upland communities in the Planalto Santareno region (PA)</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-points2TambaÌ-AÁu">
+													<p class="custom-font-body">The community </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-completed-description" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title custom-font-subtitle" id="modal-title-description"></h4>
+					</div>
+					<div class="modal-body">
+						<p class="custom-font-body" id="info-description"></p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-info" data-dismiss="modal">Ok</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="./jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1coAth-Bo7m99rnxOm2oOBB88AmaSbOk"></script>
+		
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		
+		<script type="text/javascript" src="./config.js"></script>
+		<script type="text/javascript" src="./publish.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+		<script type="text/javascript" src="./graphic.js"></script>
+		<script type="text/javascript" src="./player.js"></script>
+
+	</body>
+</html>
+
