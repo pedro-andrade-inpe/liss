@@ -13,6 +13,7 @@ Application{
 	base = "roadmap",
     zoom = 7,
 	template = {navbar = "darkblue", title = "white"},
+    display = false,
 	fieldworks = View{
         color = "Set2",
 		select = "app",
