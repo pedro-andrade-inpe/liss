@@ -2,8 +2,8 @@
 import("gis")
 
 Project{
-	title = "Upland communities in the Planalto Santareno region (PA)",
-	author = "Dal'Asta, et al.",
+	title = "Paisagens e Uso da Terra em Nucleos Populacionais e Estabelecimentos Rurais da Regiao do Baixo Tocantins - Para",
+	author = "Souza et al. (2017)",
 	file = "baixoTocantins.tview",
 	clean = true,
 	trajectory = "traj.shp",
