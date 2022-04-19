@@ -45,7 +45,15 @@ Application{
 			mreport:addText(text)
 
             if cell.drone_path ~= "NO" then
-                mreport:addImage("photos/bd_pic_drone_2019/"..cell.drone_path..".jpg")
+                mreport:addImage("photos/bd_pic_drone/"..cell.drone_path..".jpg")
+            end
+
+            if cell.pic_path ~= "NO" then
+                mreport:addImage("photos/bd_pic_field/"..cell.pic_path..".jpg")
+            end
+
+            if cell.Uso ~= "NO" then
+                mreport:addImage("photos/Uso/"..cell.Uso..".jpg")
             end
 
 			return mreport
