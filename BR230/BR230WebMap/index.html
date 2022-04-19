@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+		<title>The communities of BR230 (PA)</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+		<link rel="stylesheet" href="./publish.min.css"/>
+	</head>
+	<body>
+		<div class="container">
+			<nav class="navbar navbar-fixed-top navbar-light" style="background-color: rgba(0, 0, 139, 1);" role="navigation">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand custom-font-app-title" style="color: rgba(255, 255, 255, 1);">The communities of BR230 (PA)</a>
+					</div>
+					
+				</div>
+			</nav>
+		</div>
+		<div class="navbar-offset"></div>
+		<div id="map-canvas">
+			<div id="map"></div>
+		</div>
+		<div class="row main-row">
+			<div class="col-sm-4 col-md-2 sidebar sidebar-left pull-left">
+				<div class="panel-group sidebar-body" id="accordion-left">
+					<div class="panel panel-default">
+						<div class="panel-heading padding-header" >
+							<h4 class="panel-title custom-font-subtitle">
+								<i class="fa fa-list-alt"></i><a id="layers-title" data-toggle="collapse" href="#layers"> Layers</a>
+								<span class="pull-right slide-submenu"><i class="fa fa-chevron-left"></i></span>
+							</h4>
+						</div>
+						<div id="layers" class="panel-collapse collapse in overflow-y">
+								<div class="panel-body list-group padding-body">
+										<label>
+											<input name="villages" type="checkbox">
+											<a id="villages" href="javascript:void(0);"> Villages </a>
+										</label>
+								</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading padding-header">
+							<h4 class="panel-title custom-font-subtitle">
+								<i class="fa fa-list-alt"></i><a id="description-title" data-toggle="collapse" href="#properties"> Description</a>
+							</h4>
+						</div>
+						<div id="properties" class="panel-collapse collapse overflow-y">
+							<div class="panel-body padding-body">
+								<p class="custom-font-body" id="layer-description"></p>
+								<button id="more" type="button" class="btn btn-default custom-font-more" style="display:none;">
+									More
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading padding-header">
+							<h4 class="panel-title custom-font-subtitle">
+								<i class="fa fa-list-alt"></i><a id="legend-title" data-toggle="collapse" href="#legends"> Legend</a>
+							</h4>
+						</div>
+						<div id="legends" class="panel-collapse collapse overflow-y">
+							<div id="legend" class="panel-body padding-body custom-font-legend"></div>
+						</div>
+					</div>
+					<div id="panel-download" class="panel panel-default">
+						<div class="panel-heading padding-header" style="height: 29px;">
+							<h4 class="panel-title custom-font-subtitle">
+								<i class="fa fa-download"></i><a id="download-title"> Download</a>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mini-submenu mini-submenu-left pull-left">
+			<i class="fa fa-list-alt"></i>
+		</div>
+		<img id="loader" src="./default.gif" hidden="hidden"/>
+		<div id="loader-message"><h4 id="loader-message-text"></h4></div>
+		<footer class="navbar-default navbar-fixed-bottom">
+			<div id="footer" class="container-fluid">
+				<p>Powered by package <a href="https://github.com/TerraME/publish" target="_blank">publish</a> of <a href="http://www.terrame.org" target="_blank">TerraME</a>.</p>
+			</div>
+		</footer>
+		<div class="modal fade modal-player" id="modal-app-description" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title custom-font-subtitle">The communities of BR230 (PA)</h4>
+					</div>
+					<div class="modal-body">
+						<p class="custom-font-body">	This report presents data collection methodology and initial results description for the fieldwork carried out from September 06 th to 26 th, 2013, at terra firme (mainland) communities in the Sustainable Forest District BR-163, southwestem Pará.
+	This work complements and partially reproduces field surveys conducted at riverine communities of the Tapajós and Arapiuns Rivers in 2009 and 2012, respectively. The main objective was to characterize the
+	organization and interdependence between settlements concerning to:infrastructure, health and education services,
+	land use, ecosystem services provision and perception of welfare.
+	Source: Dal'Asta et. al (2015) As comunidades de terra firme do Sudoeste do Pará: população, infraestrutura, serviços, uso da terra e concetividades. Expedição de campo 2013.
+	Relatório Técnico de Atividade de Campo - Projeto UrbisAmazônia e Projeto Cenários para a Amazônia: Uso da terra,
+	Biodiversidade e Clima, INPE e projeto LUA-IAM/FAPESP.
+</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-info" data-dismiss="modal">Ok</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-villagesSaoLuizdoTapajos" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-villagesSaoLuizdoTapajos"> Sao Luiz do Tapajos</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-villagesSaoLuizdoTapajos">
+													<img class="report-img" src="Sao Luiz do Tapajos.JPG"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<p class="custom-font-body">The community Sao Luiz do Tapajos was founded 168 years ago and has around 352 inhabitants. It belongs to spontaneous community. The community has health center and has access to water. Most of its inhabitants have Bolsa Familia.</p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<p class="custom-font-body">Sao Luiz do Tapajos has the following infrastructure: churches, soccer field, public telephone, oil generator, school. The school offers Early Childhood Education, Elementary School, Education of Young and Adults.</p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<p class="custom-font-body">The community produces the following commodities: acai, chestnut, fruits, mandioc, rice.</p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-villagesSantaTerezinha" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-villagesSantaTerezinha"> Santa Terezinha</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-villagesSantaTerezinha">
+													<img class="report-img" src="Santa Terezinha.JPG"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<p class="custom-font-body">The community Santa Terezinha was founded 22 years ago and has around 67 inhabitants. It belongs to spontaneous community. The community hasn't health center and has access to water. Most of its inhabitants have Bolsa Familia.</p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<p class="custom-font-body">Santa Terezinha has the following infrastructure: churches, soccer field, oil generator, school. The school offers Early Childhood Education, Elementary School.</p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<p class="custom-font-body">The community produces the following commodities: acai, chestnut, fruits, mandioc.</p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-villagesBelaVista" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-villagesBelaVista"> Bela Vista</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-villagesBelaVista">
+													<img class="report-img" src="Bela Vista.JPG"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<p class="custom-font-body">The community Bela Vista was founded 28 years ago and has around 352 inhabitants. It belongs to a Settlement Project. The community has health center and hasn't access to water. Most of its inhabitants have Bolsa Familia.</p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<p class="custom-font-body">Bela Vista has the following infrastructure: churches, soccer field, oil generator, school. The school offers Early Childhood Education, Elementary School, Education of Young and Adults.</p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<p class="custom-font-body">The community produces the following commodities: acai, chestnut, fruits, mandioc, rice.</p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-villagesNossaSraAparecida" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-villagesNossaSraAparecida"> Nossa Sra Aparecida</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-villagesNossaSraAparecida">
+													<img class="report-img" src="Nossa Sra Aparecida.JPG"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<p class="custom-font-body">The community Nossa Sra Aparecida was founded 40 years ago and has around 174 inhabitants. It belongs to a Settlement Project. The community hasn't health center and has access to water. All inhabitants have Bolsa Familia.</p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<p class="custom-font-body">Nossa Sra Aparecida has the following infrastructure: church, soccer field, oil generator.</p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<p class="custom-font-body">The community produces the following commodities: acai, chestnut, fruits, mandioc, rice.</p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-villagesPlanalto" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-villagesPlanalto"> Planalto</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-villagesPlanalto">
+													<img class="report-img" src="Planalto.JPG"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<p class="custom-font-body">The community Planalto was founded 34 years ago and has around 280 inhabitants. It belongs to a Settlement Project. The community has health center and hasn't access to water. Most of its inhabitants have Bolsa Familia.</p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<p class="custom-font-body">Planalto has the following infrastructure: churches, soccer field, oil generator, school. The school offers Early Childhood Education, Education of Young and Adults.</p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<p class="custom-font-body">The community produces the following commodities: acai, chestnut, fruits.</p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-villagesNovoJardim" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-villagesNovoJardim"> Novo Jardim</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-villagesNovoJardim">
+													<img class="report-img" src="Novo Jardim.JPG"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<p class="custom-font-body">The community Novo Jardim was founded 64 years ago and has around 52 inhabitants. It belongs to a Settlement Project. The community has health center and has access to water. Few of its inhabitants have Bolsa Familia.</p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<p class="custom-font-body">Novo Jardim has the following infrastructure: churches, soccer field, public telephone, oil generator, school. The school offers Elementary School.</p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<p class="custom-font-body">The community produces the following commodities: acai, chestnut, fruits, mandioc, rice.</p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-villagesSaoJose" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-villagesSaoJose"> Sao Jose</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-villagesSaoJose">
+													<img class="report-img" src="Sao Jose.JPG"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<p class="custom-font-body">The community Sao Jose was founded 16 years ago and has around 31 inhabitants. It belongs to a Settlement Project. The community hasn't health center and hasn't access to water. Few of its inhabitants have Bolsa Familia.</p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<p class="custom-font-body">Sao Jose has the following infrastructure: churches, soccer field, oil generator, school. The school offers Early Childhood Education, Elementary School, Education of Young and Adults.</p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<p class="custom-font-body">The community produces the following commodities: acai, chestnut, fruits, rice.</p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-villagesMarana" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-villagesMarana"> Marana</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-villagesMarana">
+													<img class="report-img" src="Marana.JPG"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<p class="custom-font-body">The community Marana was founded 25 years ago and has around 117 inhabitants. It belongs to a Settlement Project. The community hasn't health center and hasn't access to water. Most of its inhabitants have Bolsa Familia.</p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<p class="custom-font-body">Marana has the following infrastructure: churches, soccer field, public telephone, oil generator, school. The school offers Early Childhood Education, Elementary School, Education of Young and Adults.</p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<p class="custom-font-body">The community produces the following commodities: acai, chestnut, fruits, mandioc, rice.</p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-villagesEstreladoNorte" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-villagesEstreladoNorte"> Estrela do Norte</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-villagesEstreladoNorte">
+													<img class="report-img" src="Estrela do Norte.JPG"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<p class="custom-font-body">The community Estrela do Norte was founded 30 years ago and has around 74 inhabitants. It belongs to spontaneous community. The community hasn't health center and has access to water. All inhabitants have Bolsa Familia.</p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<p class="custom-font-body">Estrela do Norte has the following infrastructure: churches, soccer field, oil generator, school. The school offers Early Childhood Education, Elementary School.</p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<p class="custom-font-body">The community produces the following commodities: acai, chestnut, fruits, mandioc, rice.</p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-villagesNovoParaiso" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-villagesNovoParaiso"> Novo Paraiso</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-villagesNovoParaiso">
+													<img class="report-img" src="Novo Paraiso.JPG"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<p class="custom-font-body">The community Novo Paraiso was founded 56 years ago and has around 138 inhabitants. It belongs to a Settlement Project. The community has health center and hasn't access to water. Most of its inhabitants have Bolsa Familia.</p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<p class="custom-font-body">Novo Paraiso has the following infrastructure: churches, soccer field, oil generator, school. The school offers Early Childhood Education, Elementary School, Education of Young and Adults.</p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<p class="custom-font-body">The community produces the following commodities: acai, cattle, chestnut, rice.</p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-villagesNovoHorizonte" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-villagesNovoHorizonte"> Novo Horizonte</h2>
+						<p class="text-muted custom-font-body">Dal'Asta et. al (2015)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-villagesNovoHorizonte">
+													<img class="report-img" src="Novo Horizonte.JPG"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<p class="custom-font-body">The community Novo Horizonte was founded 40 years ago and has around 47 inhabitants. It belongs to spontaneous community. The community hasn't health center and has access to water. Most of its inhabitants have Bolsa Familia.</p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<p class="custom-font-body">Novo Horizonte has the following infrastructure: church, soccer field, public telephone, oil generator, school. The school offers Early Childhood Education.</p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<p class="custom-font-body">The community produces the following commodities: acai, chestnut, mandioc, rice.</p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-completed-description" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title custom-font-subtitle" id="modal-title-description"></h4>
+					</div>
+					<div class="modal-body">
+						<p class="custom-font-body" id="info-description"></p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-info" data-dismiss="modal">Ok</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="./jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1coAth-Bo7m99rnxOm2oOBB88AmaSbOk"></script>
+		
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		
+		<script type="text/javascript" src="./config.js"></script>
+		<script type="text/javascript" src="./publish.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+		<script type="text/javascript" src="./graphic.js"></script>
+		<script type="text/javascript" src="./player.js"></script>
+
+	</body>
+</html>
+
