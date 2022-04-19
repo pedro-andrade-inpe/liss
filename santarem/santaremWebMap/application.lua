@@ -40,11 +40,13 @@ Application{
 				author = "Dal'Asta et. al (2015)"
 			}
 
---            mreport:addImage("photos/"..cell.Nome..".JPG")
+            if cell.Foto_CMM ~= "NO" then
+                mreport:addImage("photos/Foto_CMM/"..cell.Foto_CMM..".jpg")
+            end
 
-			local text = "The community "
-
-			mreport:addText(text)
+            if cell.Foto_Uso ~= "NO" then
+                mreport:addImage("photos/Foto_uso/"..cell.Foto_Uso..".jpg")
+            end
 
 			return mreport
 		end
