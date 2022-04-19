@@ -3,8 +3,8 @@
 import("publish")
 
 local description = [[
-The report presents the methodology and results obtained during fieldwork in Upland communities in the Planalto Santareno region, municipalities of Belterra, Mojuí dos Campos, and Santarém, state of Pará, from September 6th to 26th in 2013. This work complements the fieldwork carried out previously in the riverside communities of Tapajós and Arapiuns in 2009 and 2012, respectively. The main objective is to identify and characterize communities regarding infrastructure, health and education services, as well as land uses and land cover, and rural production.
-Source: DAL’ASTA, A. P.; SOUZA, A. R. DE; PINHO, C. M. D. DE; SOARES, F. DA R.; REGO, G. F. DE J.; SIQUEIRA, J. M. DE; ESCADA, M. I. S.; BRIGATTI, N.; AMARAL, S.; CAMILOTTI, V. L.; DÓRIA, V. E. M.; COSTA, L. C. DA. As Comunidades De Terra Firme Do Sudoeste Do Pará: População, Infraestrutura, Serviços, Uso Da Terra E Conectividades. São José dos Campos: INPE, 2017. Disponível em: http://urlib.net/8JMKD3MGP3W34P/3PAAHQ5
+...
+Source: <a href = "http://urlib.net/8JMKD3MGP3W34T/44STMLE">Souza et al. Paisagens e Uso da Terra em Nucleos Populacionais e Estabelecimentos Rurais da Regiao do Baixo Tocantins - Para. São José dos Campos: INPE, 2017</a>.
 ]]
 
 Application{
@@ -15,7 +15,6 @@ Application{
 	clean = true,
 	template = {navbar = "darkblue", title = "white"},
     display = false,
-
 --[[
     trajectory = View{
 		description = "Route on the BR230.",
@@ -36,17 +35,18 @@ Application{
 		icon = {"home"},
 		label = {"home"},
 		report = function(cell)
-         print("REPORT")
 			local mreport = Report{
-				title = cell.COMUNIDADE,
-				author = "Dal'Asta et. al (2015)"
+				title = cell.name,
+				author = "Souza et al. (2017)"
 			}
-
---            mreport:addImage("photos/"..cell.Nome..".JPG")
 
 			local text = "The community "
 
 			mreport:addText(text)
+
+            if cell.drone_path ~= "NO" then
+                mreport:addImage("photos/bd_pic_drone_2019/"..cell.drone_path..".jpg")
+            end
 
 			return mreport
 		end

@@ -40,17 +40,13 @@ Application{
 				author = "Souza et al. (2017)"
 			}
 
---            mreport:addImage("photos/"..cell.Nome..".JPG")
-
 			local text = "The community "
 
 			mreport:addText(text)
 
-            if cell.pic_path ~= "NO" then
-                mreport:addImage(cell.pic_path)- referencia ao endereço da imagem representativa de campo (em bd_pic_field_201x - sendo x o ano em questão);
-		name - nome da comunidade;
-		drone_path - referencia ao endereço da imagem de drone (em bd_pic_drone_2019, imagens drone disponíveis apenas para 2019);
-		Uso
+            if cell.drone_path ~= "NO" then
+                mreport:addImage("photos/bd_pic_drone_2019/"..cell.drone_path..".jpg")
+            end
 
 			return mreport
 		end
