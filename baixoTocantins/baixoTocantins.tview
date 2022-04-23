@@ -6,27 +6,27 @@
   <Author>Souza et al. (2017)</Author>
 
   <te_da:DataSourceList xmlns:te_common="http://www.terralib.org/schemas/common">
-    <te_da:DataSource access_driver="OGR" id="0a5bd016-f040-40d0-bd6c-b7cb8b95dc8b" type="OGR">
-      <te_da:Title>trajectory</te_da:Title>
-      <te_da:Description>Created on TerraME</te_da:Description>
-      <te_da:URI>file%3A%2F%2FC%3A%2FUsers%2Fpedro%2FDropbox%2Fgithub%2Fliss%2FbaixoTocantins%2Ftraj.shp</te_da:URI>
-    </te_da:DataSource>
-    <te_da:DataSource access_driver="OGR" id="a5ada89a-59be-4ef5-a75d-59287c21d4ea" type="OGR">
+    <te_da:DataSource access_driver="OGR" id="bdb054ca-2e36-41a5-9880-12b1f286900e" type="OGR">
       <te_da:Title>points</te_da:Title>
       <te_da:Description>Created on TerraME</te_da:Description>
       <te_da:URI>file%3A%2F%2FC%3A%2FUsers%2Fpedro%2FDropbox%2Fgithub%2Fliss%2FbaixoTocantins%2Fpoints.shp</te_da:URI>
+    </te_da:DataSource>
+    <te_da:DataSource access_driver="OGR" id="e0ff9e72-59b6-49cc-b93b-e43728119e4d" type="OGR">
+      <te_da:Title>trajectory</te_da:Title>
+      <te_da:Description>Created on TerraME</te_da:Description>
+      <te_da:URI>file%3A%2F%2FC%3A%2FUsers%2Fpedro%2FDropbox%2Fgithub%2Fliss%2FbaixoTocantins%2Ftraj.shp</te_da:URI>
     </te_da:DataSource>
   </te_da:DataSourceList>
 
   <ComponentList/>
 
   <te_map:LayerList>
-    <te_map:DataSetLayer id="cdb81cf8-7b14-4818-9a58-6f0fba956e5c">
+    <te_map:DataSetLayer id="31dec527-ad0e-4082-91d9-80f3030e53b7">
       <te_map:Title>points</te_map:Title>
       <te_map:Visible>NOT_VISIBLE</te_map:Visible>
       <te_map:Encoding>ISO-8859-1</te_map:Encoding>
       <te_map:DataSetName>points</te_map:DataSetName>
-      <te_map:DataSourceId>a5ada89a-59be-4ef5-a75d-59287c21d4ea</te_map:DataSourceId>
+      <te_map:DataSourceId>bdb054ca-2e36-41a5-9880-12b1f286900e</te_map:DataSourceId>
       <te_map:SRSInfo>
         <te_map:SRID>4326</te_map:SRID>
         <te_map:Proj4>+proj=longlat +datum=WGS84 +no_defs</te_map:Proj4>
@@ -131,12 +131,12 @@
         </se:FeatureTypeStyle>
       </te_map:SelectionStyle>
     </te_map:DataSetLayer>
-    <te_map:DataSetLayer id="6868d200-1899-489f-8b96-fe90f6be396d">
+    <te_map:DataSetLayer id="1636728e-815a-4a2a-b21c-1d401d615e21">
       <te_map:Title>trajectory</te_map:Title>
       <te_map:Visible>NOT_VISIBLE</te_map:Visible>
       <te_map:Encoding>ISO-8859-1</te_map:Encoding>
       <te_map:DataSetName>traj</te_map:DataSetName>
-      <te_map:DataSourceId>0a5bd016-f040-40d0-bd6c-b7cb8b95dc8b</te_map:DataSourceId>
+      <te_map:DataSourceId>e0ff9e72-59b6-49cc-b93b-e43728119e4d</te_map:DataSourceId>
       <te_map:SRSInfo>
         <te_map:SRID>4326</te_map:SRID>
         <te_map:Proj4>+proj=longlat +datum=WGS84 +no_defs</te_map:Proj4>
