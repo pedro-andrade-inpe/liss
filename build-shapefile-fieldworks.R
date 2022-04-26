@@ -29,4 +29,9 @@ result <- dplyr::bind_rows(result)
 
 plot(result)
 
+result$title <- c("Arapiuns", "Baixo Tocantins", "BR-230", "Santarém")
+
 sf::write_sf(result, "fieldworks.shp")
+
+
+

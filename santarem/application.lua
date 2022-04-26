@@ -34,7 +34,6 @@ Application{
 		icon = {"home"},
 		label = {"home"},
 		report = function(cell)
-         print("REPORT")
 			local mreport = Report{
 				title = cell.COMUNIDADE,
 				author = "Dal'Asta et. al (2015)"

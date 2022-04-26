@@ -16,11 +16,11 @@ Application{
     display = false,
 	fieldworks = View{
         color = "Set2",
-		select = "app",
+		select = "title",
         description = "Trabalhos de campo.",
 		report = function(cell)
 			local report = Report{
-				title = cell.app,
+				title = cell.title,
 				author = "LiSS",
 			}
 
