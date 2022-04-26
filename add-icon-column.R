@@ -1,4 +1,5 @@
 
+require(dplyr)
 
 basePath <- "C:/Users/pedro/Dropbox/github/liss"
 
