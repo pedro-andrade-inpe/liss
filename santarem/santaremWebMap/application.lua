@@ -14,9 +14,9 @@ Application{
 	clean = true,
 	template = {navbar = "darkblue", title = "white"},
     display = false,
---[[
+-- [[
     trajectory = View{
-		description = "Route on the BR230.",
+		description = "Route.",
 		width = 3,
 		border = "blue",
 		icon = {
@@ -34,7 +34,6 @@ Application{
 		icon = {"home"},
 		label = {"home"},
 		report = function(cell)
-         print("REPORT")
 			local mreport = Report{
 				title = cell.COMUNIDADE,
 				author = "Dal'Asta et. al (2015)"

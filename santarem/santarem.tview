@@ -6,12 +6,12 @@
   <Author>Dal'Asta, et al.</Author>
 
   <te_da:DataSourceList xmlns:te_common="http://www.terralib.org/schemas/common">
-    <te_da:DataSource access_driver="OGR" id="db04b5b2-dad8-4bcd-90f6-5f9f3e7ee478" type="OGR">
+    <te_da:DataSource access_driver="OGR" id="a03c5e9c-2325-44fd-9c22-a578d1ee22d6" type="OGR">
       <te_da:Title>trajectory</te_da:Title>
       <te_da:Description>Created on TerraME</te_da:Description>
       <te_da:URI>file%3A%2F%2FC%3A%2FUsers%2Fpedro%2FDropbox%2Fgithub%2Fliss%2Fsantarem%2Ftraj.shp</te_da:URI>
     </te_da:DataSource>
-    <te_da:DataSource access_driver="OGR" id="dc60dc68-234e-4969-904c-89781399c016" type="OGR">
+    <te_da:DataSource access_driver="OGR" id="afb00172-d858-44f9-942b-a81d0cf1c79f" type="OGR">
       <te_da:Title>points</te_da:Title>
       <te_da:Description>Created on TerraME</te_da:Description>
       <te_da:URI>file%3A%2F%2FC%3A%2FUsers%2Fpedro%2FDropbox%2Fgithub%2Fliss%2Fsantarem%2Fpoints.shp</te_da:URI>
@@ -21,12 +21,12 @@
   <ComponentList/>
 
   <te_map:LayerList>
-    <te_map:DataSetLayer id="4d1561aa-89fa-419b-b5f7-2b13f7fd6fb2">
+    <te_map:DataSetLayer id="33fbab04-2ec9-44a5-b8fa-4eb3ab4487c1">
       <te_map:Title>points</te_map:Title>
       <te_map:Visible>NOT_VISIBLE</te_map:Visible>
       <te_map:Encoding>ISO-8859-1</te_map:Encoding>
       <te_map:DataSetName>points</te_map:DataSetName>
-      <te_map:DataSourceId>dc60dc68-234e-4969-904c-89781399c016</te_map:DataSourceId>
+      <te_map:DataSourceId>afb00172-d858-44f9-942b-a81d0cf1c79f</te_map:DataSourceId>
       <te_map:SRSInfo>
         <te_map:SRID>4326</te_map:SRID>
         <te_map:Proj4>+proj=longlat +datum=WGS84 +no_defs</te_map:Proj4>
@@ -131,12 +131,12 @@
         </se:FeatureTypeStyle>
       </te_map:SelectionStyle>
     </te_map:DataSetLayer>
-    <te_map:DataSetLayer id="a85f9670-a802-42a9-b0ae-bbdbd6f297f4">
+    <te_map:DataSetLayer id="c2ab75a2-aa0b-4ed7-abfe-44712218456f">
       <te_map:Title>trajectory</te_map:Title>
       <te_map:Visible>NOT_VISIBLE</te_map:Visible>
       <te_map:Encoding>ISO-8859-1</te_map:Encoding>
       <te_map:DataSetName>traj</te_map:DataSetName>
-      <te_map:DataSourceId>db04b5b2-dad8-4bcd-90f6-5f9f3e7ee478</te_map:DataSourceId>
+      <te_map:DataSourceId>a03c5e9c-2325-44fd-9c22-a578d1ee22d6</te_map:DataSourceId>
       <te_map:SRSInfo>
         <te_map:SRID>4326</te_map:SRID>
         <te_map:Proj4>+proj=longlat +datum=WGS84 +no_defs</te_map:Proj4>

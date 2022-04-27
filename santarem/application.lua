@@ -14,9 +14,9 @@ Application{
 	clean = true,
 	template = {navbar = "darkblue", title = "white"},
     display = false,
---[[
+-- [[
     trajectory = View{
-		description = "Route on the BR230.",
+		description = "Route.",
 		width = 3,
 		border = "blue",
 		icon = {
