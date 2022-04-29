@@ -32,7 +32,6 @@ Application{
 	},
     --]]
 	villages = View{
-		download = true,
 		description = "Settlements corresponded to agrovilas, villages and communities.",
 		select = {"CMM", "TIPO"},
 		icon = {"home", "forest"},

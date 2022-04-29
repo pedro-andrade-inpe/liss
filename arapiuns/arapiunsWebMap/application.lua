@@ -19,6 +19,7 @@ Application{
 	description = description,
 	base = "roadmap",
 	template = {navbar = "darkblue", title = "white"},
+    display = false,
 	trajectory = View{
 		description = "Route on the Arapiuns River.",
 		width = 2,
@@ -28,7 +29,6 @@ Application{
 		}
 	},
 	villages = View{
-		download = true,
 		description = "Riverine settlements corresponded to Indian tribes, villages, and communities that are inserted into public lands.",
 		select = {"Nome", "UC"},
 		icon = {"home", "forest"},

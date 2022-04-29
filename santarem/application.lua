@@ -28,7 +28,6 @@ Application{
     --]]
     -- [[
 	points = View{
-		download = true,
 		description = "Settlements corresponded to agrovilas, villages and communities.",
 		select = {"COMUNIDADE", "micon2"},
 		icon = {"home"},
