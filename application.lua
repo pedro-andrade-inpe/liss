@@ -12,7 +12,7 @@ descriptions = {
         photo = {"Baixo Tocantins 2018.jpg", "Baixo Tocantins 2019.jpg"},
     },
     BR230 = {
-        date = "Realizado no período de 6 a 26 de setembro de 2013.",
+        date = "Realizado no período de 6 a 18 de outubro de 2014.",
         photo = {"BR230.jpg"}
     },
     santarem = {
