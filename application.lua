@@ -40,13 +40,11 @@ Application{
 		report = function(cell)
 			local report = Report{
 				title = cell.title,
-				author = "LiSS",
+				author = descriptions[cell.app].date
 			}
 
             local link = "https://combinatronics.com/pedro-andrade-inpe/liss/main/"..
               cell.app.."/"..cell.app.."WebMap/index.html"
-
-            report:addText(descriptions[cell.app].date)
 
 			report:addText("See the application <a href = \""..link.."\" target=\"_blank\">here</a>.")
 
