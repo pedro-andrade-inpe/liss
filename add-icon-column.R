@@ -22,6 +22,8 @@ mfile <- paste0(basePath, "/baixoTocantins/points.shp")
 
 msf <- sf::read_sf(mfile) %>%
   dplyr::mutate(drone_path = ifelse(is.na(drone_path), "NO", drone_path)) %>%
+  dplyr::mutate(data = ifelse(is.na(data), "NO", data)) %>%
+  dplyr::mutate(atec_tipo = ifelse(is.na(atec_tipo), "NO", atec_tipo)) %>%
   dplyr::mutate(Uso = ifelse(is.na(Uso), "NO", Uso)) %>%
   dplyr::mutate(pic_path = ifelse(is.na(pic_path), "NO", pic_path))
 
