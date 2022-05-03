@@ -6,7 +6,7 @@ Project{
 	author = "Souza et al. (2017)",
 	file = "baixoTocantins.tview",
 	clean = true,
-	trajectory = "traj.shp",
+	--trajectory = "traj.shp",
 	points = "points.shp",
 }
 
