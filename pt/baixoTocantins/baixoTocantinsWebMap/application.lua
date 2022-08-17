@@ -3,8 +3,15 @@
 import("publish")
 
 local description = [[
-...
-Source: <a href = "http://urlib.net/8JMKD3MGP3W34T/44STMLE">Souza et al. Paisagens e Uso da Terra em Nucleos Populacionais e Estabelecimentos Rurais da Regiao do Baixo Tocantins - Para. São José dos Campos: INPE, 2017</a>.
+Esta aplicação descreve as atividades de trabalho de campo realizadas na região do Baixo
+Tocantins, microrregião de Cametá no estado do Pará, nos anos de 2018 e
+2019. Essas atividades tiveram como objetivo coletar dados para caracterizar
+dois aspectos da região. O primeiro aspecto diz respeito às diferentes formas
+de uso e ocupação do solo e os principais métodos de produção associados
+às atividades extrativistas agrícolas e agroflorestais. O segundo aspecto é a
+distribuição e o tipo de infraestrutura urbana, bem como o acesso aos serviços
+em áreas habitadas.<br>
+Source: <a href = "http://urlib.net/8JMKD3MGP3W34T/44STMLE" target="_blank">Souza et al. Paisagens e Uso da Terra em Nucleos Populacionais e Estabelecimentos Rurais da Regiao do Baixo Tocantins - Para</a>.
 ]]
 
 Application{
@@ -29,7 +36,7 @@ Application{
     --]]
     -- [[
 	points = View{
-		description = "Settlements corresponded to agrovilas, villages and communities.",
+		description = "Assentamentos correspondem a agrovilas, vilas e comunidades.",
 		select = {"name", "micon2"},
 		icon = {"home"},
 		label = {"home"},

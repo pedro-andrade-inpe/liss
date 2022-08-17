@@ -2,7 +2,7 @@
 import("publish")
 
 local description = [[
-	This report presents data collection methodology and initial results description for the fieldwork carried out from September 06th to 26th, 2013, at terra firme (mainland) communities in the Sustainable Forest District of BR-163, southwestem Pará.
+	This application presents data collection methodology and initial results description for the fieldwork carried out from September 06th to 26th, 2013, at terra firme (mainland) communities in the Sustainable Forest District of BR-163, southwestem Pará.
 	This work complements and partially reproduces field surveys conducted at riverine communities of the Tapajós and Arapiuns Rivers in 2009 and 2012, respectively. The main objective was to characterize the
 	organization and interdependence between settlements concerning to:infrastructure, health and education services,
 	land use, ecosystem services provision and perception of welfare.<br>

@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<Project version="5.5.1" xmlns="http://www.terralib.org/schemas/qt/af" xmlns:ogc="http://www.opengis.net/ogc" xmlns:se="http://www.opengis.net/se" xmlns:te_da="http://www.terralib.org/schemas/dataaccess" xmlns:te_map="http://www.terralib.org/schemas/maptools" xmlns:te_qt_af="http://www.terralib.org/schemas/common/af" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:schemaLocation="http://www.terralib.org/schemas/qt/af c:\terrame\bin\share/terralib/schemas/terralib/qt/af/project.xsd">
+<Project version="5.5.1" xmlns="http://www.terralib.org/schemas/qt/af" xmlns:ogc="http://www.opengis.net/ogc" xmlns:se="http://www.opengis.net/se" xmlns:te_da="http://www.terralib.org/schemas/dataaccess" xmlns:te_map="http://www.terralib.org/schemas/maptools" xmlns:te_qt_af="http://www.terralib.org/schemas/common/af" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:schemaLocation="http://www.terralib.org/schemas/qt/af C:\TerraME\bin\share/terralib/schemas/terralib/qt/af/project.xsd">
 
   <Title>Paisagens e Uso da Terra em Nucleos Populacionais e Estabelecimentos Rurais da Regiao do Baixo Tocantins - Para</Title>
 
   <Author>Souza et al. (2017)</Author>
 
   <te_da:DataSourceList xmlns:te_common="http://www.terralib.org/schemas/common">
-    <te_da:DataSource access_driver="OGR" id="75e5c591-9e6b-443c-94c5-61091082962c" type="OGR">
+    <te_da:DataSource access_driver="OGR" id="897290e4-9c48-41a4-ae76-a4e1a2cd8e94" type="OGR">
       <te_da:Title>points</te_da:Title>
       <te_da:Description>Created on TerraME</te_da:Description>
-      <te_da:URI>file%3A%2F%2FC%3A%2FUsers%2Fpedro%2FDropbox%2Fgithub%2Fliss%2FbaixoTocantins%2Fpoints.shp</te_da:URI>
+      <te_da:URI>file%3A%2F%2FC%3A%2FUsers%2Fpedro%2FDropbox%2Fgithub%2Fliss%2Fpt%2FbaixoTocantins%2Fpoints.shp</te_da:URI>
     </te_da:DataSource>
   </te_da:DataSourceList>
 
   <ComponentList/>
 
   <te_map:LayerList>
-    <te_map:DataSetLayer id="6055d8cb-9477-48c1-8856-2adc0ffb92ff">
+    <te_map:DataSetLayer id="71b84fd4-11f6-43cd-a614-405cb191c39c">
       <te_map:Title>points</te_map:Title>
       <te_map:Visible>NOT_VISIBLE</te_map:Visible>
       <te_map:Encoding>ISO-8859-1</te_map:Encoding>
       <te_map:DataSetName>points</te_map:DataSetName>
-      <te_map:DataSourceId>75e5c591-9e6b-443c-94c5-61091082962c</te_map:DataSourceId>
+      <te_map:DataSourceId>897290e4-9c48-41a4-ae76-a4e1a2cd8e94</te_map:DataSourceId>
       <te_map:SRSInfo>
         <te_map:SRID>4326</te_map:SRID>
         <te_map:Proj4>+proj=longlat +datum=WGS84 +no_defs</te_map:Proj4>
