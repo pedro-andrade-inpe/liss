@@ -22,7 +22,7 @@ descriptions = {
 }
 
 local description = [[
-	This webpage describes LiSS fieldworks in the Brazilian Amazonia. Please click in a box to see more information and to navigate through specific applications.<br>Each of these fieldworks was funded by a set of agencies, shown in the respective application. The toolkit to create this application was partially funded by <a href="http://nexus.ccst.inpe.br/" target="_blank">Nexus project</a>, grant #2017/22269-2, São Paulo Research Foundation (FAPESP).
+	This webpage describes some fieldworks of <a href="https://www.lissinpe.com.br/" target="_blank">LiSS laboratory</a> in the Brazilian Amazonia. Please click in a box in the map to see more information and to navigate through specific applications.<br>Each of these fieldworks was funded by a set of agencies, shown in the respective application. The toolkit to create this application was partially funded by <a href="http://nexus.ccst.inpe.br/" target="_blank">Nexus project</a>, grant #2017/22269-2, São Paulo Research Foundation (FAPESP).
 ]]
 
 Application{

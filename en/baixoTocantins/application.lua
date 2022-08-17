@@ -29,7 +29,7 @@ Application{
     --]]
     -- [[
 	points = View{
-		description = "Settlements corresponded to agrovilas, villages and communities.",
+		description = "Settlements correspond to agrovilas, villages, and communities.",
 		select = {"name", "micon2"},
 		icon = {"home"},
 		label = {"home"},
@@ -39,7 +39,7 @@ Application{
 				author = "Souza et al. (2017)"
 			}
 
-			local text = "The "..cell.name.." community was founded "..cell.idd.." years ago. "..
+			local text = "The "..cell.name.." community was founded "..math.floor(cell.idd).." years ago. "..
                          "In 2013, there were around "..math.floor(cell.nfam).." families, "..
                          math.floor(cell.bfam).." of them received a family allowance. "
 
