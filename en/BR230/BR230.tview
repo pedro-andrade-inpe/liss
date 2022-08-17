@@ -6,7 +6,7 @@
   <Author>Dal'Asta, et al.</Author>
 
   <te_da:DataSourceList xmlns:te_common="http://www.terralib.org/schemas/common">
-    <te_da:DataSource access_driver="OGR" id="19eff47e-7557-4c01-9958-03281e9fe084" type="OGR">
+    <te_da:DataSource access_driver="OGR" id="7ed19404-b591-40a4-9f0e-545a094e4223" type="OGR">
       <te_da:Title>villages</te_da:Title>
       <te_da:Description>Created on TerraME</te_da:Description>
       <te_da:URI>file%3A%2F%2FC%3A%2FUsers%2Fpedro%2FDropbox%2Fgithub%2Fliss%2Fen%2FBR230%2Fpoints.shp</te_da:URI>
@@ -16,12 +16,12 @@
   <ComponentList/>
 
   <te_map:LayerList>
-    <te_map:DataSetLayer id="e94cf8d8-c766-4be4-be08-e6d8c681523c">
+    <te_map:DataSetLayer id="1019eb82-14fa-4e4d-82eb-98605e5a3b7b">
       <te_map:Title>villages</te_map:Title>
       <te_map:Visible>NOT_VISIBLE</te_map:Visible>
       <te_map:Encoding>ISO-8859-1</te_map:Encoding>
       <te_map:DataSetName>points</te_map:DataSetName>
-      <te_map:DataSourceId>19eff47e-7557-4c01-9958-03281e9fe084</te_map:DataSourceId>
+      <te_map:DataSourceId>7ed19404-b591-40a4-9f0e-545a094e4223</te_map:DataSourceId>
       <te_map:SRSInfo>
         <te_map:SRID>4618</te_map:SRID>
         <te_map:Proj4>+proj=longlat +ellps=aust_SA +towgs84=-66.87,4.37,-38.52,0,0,0,0 +no_defs</te_map:Proj4>

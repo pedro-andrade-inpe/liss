@@ -2,13 +2,12 @@
 import("publish")
 
 local description = [[
-	This report presents data collection methodology and initial results description for the fieldwork carried out from September 06th to 26th, 2013, at terra firme (mainland) communities in the Sustainable Forest District BR-163, southwestem Pará.
+	This report presents data collection methodology and initial results description for the fieldwork carried out from September 06th to 26th, 2013, at terra firme (mainland) communities in the Sustainable Forest District of BR-163, southwestem Pará.
 	This work complements and partially reproduces field surveys conducted at riverine communities of the Tapajós and Arapiuns Rivers in 2009 and 2012, respectively. The main objective was to characterize the
 	organization and interdependence between settlements concerning to:infrastructure, health and education services,
 	land use, ecosystem services provision and perception of welfare.<br>
 	Source: <a href = "http://mtc-m21b.sid.inpe.br/rep/8JMKD3MGP3W34P/3PAAHQ5" target="_blank">Dal'Asta et. al (2015) As comunidades de terra firme do Sudoeste do Pará: população, infraestrutura, serviços, uso da terra e concetividades. Expedição de campo 2013.
-	Relatório Técnico de Atividade de Campo - Projeto UrbisAmazônia e Projeto Cenários para a Amazônia: Uso da terra,
-	Biodiversidade e Clima</a>.<br> This fieldwork was part of LUA-IAM project, funded by FAPESP process #08/58112-0.
+	Relatório Técnico de Atividade de Campo</a>.<br> This fieldwork was partially funded by projects UrbisAmazônia (ITV-DS Instituto Tecnológico Vale - Desenvolvimento Sustentável process #3.611.000.00/11) and LUA-IAM (FAPESP process #08/58112-0).
 ]]
 
 Application{
