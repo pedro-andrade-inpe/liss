@@ -4,25 +4,25 @@ import("publish")
 
 descriptions = {
     arapiuns = {
-        date = "Realizado no período de 4 a 15 de junho de 2012.",
+        date = "Carried out from June 4th to 15th, 2012.",
         photo = {"Arapiuns.jpg"},
     },
     baixoTocantins = {
-        date = "Realizado nos anos de 2018 e 2019.",
+        date = "Carried out in 2018 and 2019.",
         photo = {"Baixo Tocantins 2018.jpg", "Baixo Tocantins 2019.jpg"},
     },
     BR230 = {
-        date = "Realizado no período de 6 a 18 de outubro de 2014.",
+        date = "Carried out from October 6th to 18th, 2014.",
         photo = {"BR230.jpg"}
     },
     santarem = {
-        date = "Realizado no período de 6 a 26 de setembro de 2013.",
+        date = "Carried out from September 6th to 26th, 2013.",
         photo = {"Santarem.jpg"}
     }
 }
 
 local description = [[
-	This webpage describes LiSS fieldworks in the Brazilian Amazonia. Each of these fieldworks was funded by a set of agencies, shown in the respective application. Please click in a box to see more information and to navigate through specific applications.<br>The toolkit to create this application was funded by FAPESP...
+	This webpage describes LiSS fieldworks in the Brazilian Amazonia. Please click in a box to see more information and to navigate through specific applications.<br>Each of these fieldworks was funded by a set of agencies, shown in the respective application. The toolkit to create this application was partially funded by <a href="http://nexus.ccst.inpe.br/">Nexus project</a>, grant #2017/22269-2, São Paulo Research Foundation (FAPESP).
 ]]
 
 Application{
