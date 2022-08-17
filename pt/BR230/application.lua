@@ -31,7 +31,7 @@ Application{
 	},
     --]]
 	villages = View{
-		description = "Settlements corresponded to agrovilas, villages and communities.",
+		description = "Assentamentos correspondem a agrovilas, vilas e comunidades.",
 		select = {"CMM", "TIPO"},
 		icon = {"home", "forest"},
 		label = {"PA", "cmm"},
@@ -42,36 +42,35 @@ Application{
 				author = "Dal'Asta et. al (2015)"
 			}
 
-
             mreport:addImage("photos/"..cell.Nome..".jpg")
 
 			local age = math.ceil(130 * cell.IDDCM / 0.77)
 			local pop = math.ceil(350 * cell.NPES / 0.8)
 
-			local text = "The community "..cell.Nome.." was founded "..age.." years ago and has around "..pop.." inhabitants."
+			local text = "A comunidade "..cell.Nome.." foi fundada há "..age.." anos e possui cerca de "..pop.." habitantes."
 
 			if cell.PA == 1 then
-				text = text.." It belongs to a Settlement Project."
+				text = text.." Ela pertence a um projeto de assentamento."
 			else
-				text = text.." It belongs to spontaneous community."
+				text = text.." Ela é uma comunidade que surgiu de forma espontânea, sem ligação com qualquer projeto de assentamento."
 			end
 
 			local health, water
-			if cell.PSAU > 0 then health = "has" else health = "hasn't" end
-			if cell.AGUA > 0 then water  = "has" else water  = "hasn't" end
+			if cell.PSAU > 0 then health = "possui" else health = "não possui" end
+			if cell.AGUA > 0 then water  = "possui" else water  = "não possui" end
 
-			text = text..string.format(" The community %s health center and %s access to water.", health, water)
+			text = text..string.format(" A comunidade possui %s posto de saúde e %s acessos a água.", health, water)
 
 			if cell.BFAM == 0 then
-				text = text.." It has no Bolsa Familia."
+				text = text.." Nenhum habitante recebe Bolsa Familia."
 			elseif cell.BFAM <= 0.3 then
-				text = text.." Few of its inhabitants have Bolsa Familia."
+				text = text.." Poucos habitantes recebem Bolsa Familia."
 			elseif cell.BFAM <= 0.6 then
-				text = text.." Many of its inhabitants have Bolsa Familia."
+				text = text.." Muitos habitantes recebem Bolsa Familia."
 			elseif cell.BFAM <= 0.8 then
-				text = text.." Most of its inhabitants have Bolsa Familia."
+				text = text.." A maioria dos habitantes recebem Bolsa Familia."
 			else
-				text = text.." All inhabitants have Bolsa Familia."
+				text = text.." Todos os habitantes recebem Bolsa Familia."
 			end
 
 			mreport:addText(text)
@@ -80,30 +79,30 @@ Application{
 
 			if cell.IGREJAS > 0 then
 				if cell.IGREJAS > 0.6 then
-					table.insert(infrastructure, "churches")
+					table.insert(infrastructure, "igrejas")
 				else
-					table.insert(infrastructure, "church")
+					table.insert(infrastructure, "igreja")
 				end
 			end
 
-			if cell.CFUT    == 1 then table.insert(infrastructure, "soccer field")     end
-			if cell.ORELHAO == 1 then table.insert(infrastructure, "public telephone") end
-			if cell.ENERGIA  > 0 then table.insert(infrastructure, "oil generator")    end
+			if cell.CFUT    == 1 then table.insert(infrastructure, "campo de futebol")     end
+			if cell.ORELHAO == 1 then table.insert(infrastructure, "telefone público") end
+			if cell.ENERGIA  > 0 then table.insert(infrastructure, "gerador a óleo")    end
 
 			local school = {}
-			if cell.ENSINF > 0   then table.insert(school, "Early Childhood Education")     end
-			if cell.ENSFUND2 > 0 then table.insert(school, "Elementary School")             end
-			if cell.EJA > 0      then table.insert(school, "Education of Young and Adults") end
+			if cell.ENSINF > 0   then table.insert(school, "Ensino Fundamental I")     end
+			if cell.ENSFUND2 > 0 then table.insert(school, "Ensino Fundamental II")             end
+			if cell.EJA > 0      then table.insert(school, "EJA (Educação de Jovens e Adultos)") end
 
 			if #school > 0 then
-				table.insert(infrastructure, "school")
+				table.insert(infrastructure, "escola")
 			end
 
 			if #infrastructure > 0 then
-				text = string.format(cell.Nome.." has the following infrastructure: %s.", table.concat(infrastructure, ", "))
+				text = string.format(cell.Nome.." possui as seguintes infraestruturas: %s.", table.concat(infrastructure, ", "))
 
 				if #school > 0 then
-					text = text..string.format(" The school offers %s.", table.concat(school, ", "))
+					text = text..string.format(" A escola oferece %s.", table.concat(school, ", "))
 				end
 
 				mreport:addText(text)
@@ -112,14 +111,14 @@ Application{
 			production = {}
 
 			if cell.ACAI     == 1 then table.insert(production, "acai")     end
-			if cell.GADO     == 1 then table.insert(production, "cattle")   end
-			if cell.CASTANHA == 1 then table.insert(production, "chestnut") end
-			if cell.FRUTAS   == 1 then table.insert(production, "fruits")   end
-			if cell.MAND     == 1 then table.insert(production, "mandioc")  end
-			if cell.ARROZ    == 1 then table.insert(production, "rice")     end
+			if cell.GADO     == 1 then table.insert(production, "gado")   end
+			if cell.CASTANHA == 1 then table.insert(production, "castanha") end
+			if cell.FRUTAS   == 1 then table.insert(production, "frutas")   end
+			if cell.MAND     == 1 then table.insert(production, "mandioca")  end
+			if cell.ARROZ    == 1 then table.insert(production, "arroz")     end
 
 			if #production > 0 then
-				mreport:addText(string.format("The community produces the following commodities: %s.", table.concat(production, ", ")))
+				mreport:addText(string.format("A comunidade produz os seguintes produtos: %s.", table.concat(production, ", ")))
 			end
 
 			return mreport

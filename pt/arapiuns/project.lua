@@ -29,7 +29,7 @@
 import("gis")
 
 project = Project{
-	title = "The riverine settlements at Arapiuns (PA)",
+	title = "As comunidades ribeirinhas do Arapiuns",
 	author = "Carneiro, H.",
 	file = "arapiuns.tview",
 	clean = true,
