@@ -22,7 +22,8 @@ descriptions = {
 }
 
 local description = [[
-	This webpage describes LiSS fieldworks in the Brazilian Amazonia. Each of these fieldworks was funded by a set of agencies, shown in the respective application. Please click in a box to see more information and to navigate through specific applications.<br>The toolkit to create this application was funded by FAPESP...
+	Esta página descreve os trabalhos de campo do laboratório  <a href="https://www.lissinpe.com.br/" target="_blank">LiSS</a> na Amazônia Brasileira. Clique em um retângulo no mapa para ter mais informações e navegar por uma aplicação específica. <br>
+    Cada um dos trabalhos de campo aqui descritos foi fomentado por diferentes fontes, descritas nas respectivas aplicações. A ferramenta para criar esta aplicação foi parcialmente fomentada pelo projeto <a href="http://nexus.ccst.inpe.br/" target="_blank">Nexus</a>, processo FAPESP #2017/22269-2.
 ]]
 
 Application{
@@ -43,10 +44,10 @@ Application{
 				author = descriptions[cell.app].date
 			}
 
-            local link = "https://combinatronics.com/pedro-andrade-inpe/liss/main/en/"..
+            local link = "https://combinatronics.com/pedro-andrade-inpe/liss/main/pt/"..
               cell.app.."/"..cell.app.."WebMap/index.html"
 
-			report:addText("See the application <a href = \""..link.."\" target=\"_blank\">here</a>.")
+			report:addText("Veja a aplicação <a href = \""..link.."\" target=\"_blank\">aqui</a>.")
 
             forEachElement(descriptions[cell.app].photo, function(_, value)
               report:addImage("photos/"..value)

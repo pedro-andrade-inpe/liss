@@ -2,7 +2,7 @@
 import("gis")
 
 Project{
-	title = "Upland communities in the Planalto Santareno region (PA)",
+	title = "Comunidades de terra firme da região do Planalto Santareno",
 	author = "Dal'Asta, et al.",
 	file = "santarem.tview",
 	clean = true,

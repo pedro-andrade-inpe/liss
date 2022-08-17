@@ -2,15 +2,14 @@
 import("publish")
 
 local description = [[
-	This report presents the methodology and the initial results obtained at the fieldwork along riverine settlements at
-	Arapiuns River, tributary of Tapajós River, municipality of Santarém, Pará state, from June 4 th to 15 th , 2012.
-	This research reproduces and extends the data collection accomplished for Tapajós communities in 2009, regarding the
-	infrastructure and network relations of riverine human settlements. The main objective was to characterize the
-	organization and interdependence between settlements concerning to:infrastructure, health and education services,
-	land use, ecosystem services provision and perception of welfare.
-	Source: Escada et. al (2013) Infraestrutura, Serviços e Conectividade das Comunidades Ribeirinhas do Arapiuns, PA.
-	Relatório Técnico de Atividade de Campo - Projeto UrbisAmazônia e Projeto Cenários para a Amazônia: Uso da terra,
-	Biodiversidade e Clima, INPE.
+    Esta aplicação apresenta resultados obtidos no trabalho de campo junto a assentamentos ribeirinhos no
+    Rio Arapiuns, afluente do Rio Tapajós, município de Santarém, estado do Pará, de 4 a 15 de junho de 2012.
+    Esta pesquisa reproduz e amplia a coleta de dados realizada para as comunidades do Tapajós em 2009, sobre a
+    infraestrutura e relações em rede de assentamentos ribeirinhos. O objetivo principal foi caracterizar a
+    organização e interdependência entre assentamentos no que diz respeito a: infraestrutura, serviços de saúde e educação,
+    uso da terra, prestação de serviços ecossistêmicos e percepção de bem-estar. <br>
+	Fonte: <a href="http://mtc-m16d.sid.inpe.br/col/sid.inpe.br/mtc-m19/2013/04.29.14.32/doc/publicacao.pdf" target="_blank"> Escada et. al (2013) Infraestrutura, Serviços e Conectividade das Comunidades Ribeirinhas do Arapiuns, PA.
+	Relatório Técnico de Atividade de Campo</a>. Este trabalho de campo foi fomentado pelos projetos UrbisAmazônia e Cenários para a Amazônia: Uso da terra, Biodiversidade e Clima.
 ]]
 
 Application{
@@ -20,6 +19,7 @@ Application{
 	base = "roadmap",
 	template = {navbar = "darkblue", title = "white"},
     display = false,
+   --[[
 	trajectory = View{
 		description = "Route on the Arapiuns River.",
 		width = 2,
@@ -28,11 +28,12 @@ Application{
 			time = 100
 		}
 	},
+    --]]
 	villages = View{
-		description = "Riverine settlements corresponded to Indian tribes, villages, and communities that are inserted into public lands.",
+		description = "As comunidades ribeirinhas correspondem a tribos indígenas, vilas e comunidades que estão localizadas em terras públicas.",
 		select = {"Nome", "UC"},
 		icon = {"home", "forest"},
-		label = {"PAE Lago Grande", "Conservation Unit"},
+		label = {"PAE Lago Grande", "Unidade de Conservação"},
 		report = function(cell)
 			local mreport = Report{
 				title = cell.Nome,
@@ -44,30 +45,30 @@ Application{
 			local age = math.ceil(130 * cell.IDDCM / 0.77)
 			local pop = math.ceil(350 * cell.NPES / 0.8)
 
-			local text = "The community "..cell.Nome.." was founded "..age.." years ago and has around "..pop.." inhabitants."
+			local text = "A comunidade "..cell.Nome.." foi fundada há "..age.." anos e possui aproximadamente "..pop.." habitantes."
 
 			if cell.UC == 1 then
-				text = text.." It belongs to a Conservation Unit."
+				text = text.." Ela pertence a uma Unidade de Conservação."
 			else
-				text = text.." It belongs to PAE Lago Grande."
+				text = text.." Ela pertence ao PAE Lago Grande."
 			end
 
 			local health, water
-			if cell.PSAU > 0 then health = "has" else health = "hasn't" end
-			if cell.AGUA > 0 then water  = "has" else water  = "hasn't" end
+			if cell.PSAU > 0 then health = "tem" else health = "não tem" end
+			if cell.AGUA > 0 then water  = "tem" else water  = "não tem" end
 
-			text = text..string.format(" The community %s health center and %s access to water.", health, water)
+			text = text..string.format(" A comunidade possui %s posto de saúde e %s acessos a água.", health, water)
 
 			if cell.BFAM == 0 then
-				text = text.." It has no Bolsa Familia."
+				text = text.." Nenhum habitante recebe Bolsa Familia."
 			elseif cell.BFAM <= 0.3 then
-				text = text.." Few of its inhabitants have Bolsa Familia."
+				text = text.." Poucos habitantes recebem Bolsa Familia."
 			elseif cell.BFAM <= 0.6 then
-				text = text.." Many of its inhabitants have Bolsa Familia."
+				text = text.." Muitos habitantes recebem Bolsa Familia."
 			elseif cell.BFAM <= 0.8 then
-				text = text.." Most of its inhabitants have Bolsa Familia."
+				text = text.." A maioria dos habitantes recebem Bolsa Familia."
 			else
-				text = text.." All inhabitants have Bolsa Familia."
+				text = text.." Todos os habitantes recebem Bolsa Familia."
 			end
 
 			mreport:addText(text)
@@ -76,30 +77,30 @@ Application{
 
 			if cell.IGREJAS > 0 then
 				if cell.IGREJAS > 0.6 then
-					table.insert(infrastructure, "churches")
+					table.insert(infrastructure, "igrejas")
 				else
-					table.insert(infrastructure, "church")
+					table.insert(infrastructure, "igreja")
 				end
 			end
 
-			if cell.CFUT    == 1 then table.insert(infrastructure, "soccer field")     end
-			if cell.ORELHAO == 1 then table.insert(infrastructure, "public telephone") end
-			if cell.ENERGIA  > 0 then table.insert(infrastructure, "oil generator")    end
+			if cell.CFUT    == 1 then table.insert(infrastructure, "campo de futebol")     end
+			if cell.ORELHAO == 1 then table.insert(infrastructure, "telefone público") end
+			if cell.ENERGIA  > 0 then table.insert(infrastructure, "gerador a óleo")    end
 
 			local school = {}
-			if cell.ENSINF > 0   then table.insert(school, "Early Childhood Education")     end
-			if cell.ENSFUND2 > 0 then table.insert(school, "Elementary School")             end
-			if cell.EJA > 0      then table.insert(school, "Education of Young and Adults") end
+			if cell.ENSINF > 0   then table.insert(school, "Ensino Fundamental I")     end
+			if cell.ENSFUND2 > 0 then table.insert(school, "Ensino Fundamental II")             end
+			if cell.EJA > 0      then table.insert(school, "EJA (Educação de Jovens e Adultos)") end
 
 			if #school > 0 then
-				table.insert(infrastructure, "school")
+				table.insert(infrastructure, "escola")
 			end
 
 			if #infrastructure > 0 then
-				text = string.format(cell.Nome.." has the following infrastructure: %s.", table.concat(infrastructure, ", "))
+				text = string.format(cell.Nome.." possui as seguintes infraestruturas: %s.", table.concat(infrastructure, ", "))
 
 				if #school > 0 then
-					text = text..string.format(" The school offers %s.", table.concat(school, ", "))
+					text = text..string.format(" A escola oferece %s.", table.concat(school, ", "))
 				end
 
 				mreport:addText(text)
@@ -108,14 +109,14 @@ Application{
 			local production = {}
 
 			if cell.ACAI     == 1 then table.insert(production, "acai")     end
-			if cell.GADO     == 1 then table.insert(production, "cattle")   end
-			if cell.CASTANHA == 1 then table.insert(production, "chestnut") end
-			if cell.FRUTAS   == 1 then table.insert(production, "fruits")   end
-			if cell.MAND     == 1 then table.insert(production, "mandioc")  end
-			if cell.ARROZ    == 1 then table.insert(production, "rice")     end
+			if cell.GADO     == 1 then table.insert(production, "gado")   end
+			if cell.CASTANHA == 1 then table.insert(production, "castanha") end
+			if cell.FRUTAS   == 1 then table.insert(production, "frutas")   end
+			if cell.MAND     == 1 then table.insert(production, "mandioca")  end
+			if cell.ARROZ    == 1 then table.insert(production, "arroz")     end
 
 			if #production > 0 then
-				mreport:addText(string.format("The community produces the following commodities: %s.", table.concat(production, ", ")))
+				mreport:addText(string.format("A comunidade produz os seguintes produtos: %s.", table.concat(production, ", ")))
 			end
 
 			return mreport
