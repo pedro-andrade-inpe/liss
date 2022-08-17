@@ -4,7 +4,7 @@ import("publish")
 
 local description = [[
 ...
-Source: <a href = "http://urlib.net/8JMKD3MGP3W34T/44STMLE">Souza et al. Paisagens e Uso da Terra em Nucleos Populacionais e Estabelecimentos Rurais da Regiao do Baixo Tocantins - Para. São José dos Campos: INPE, 2017</a>.
+Source: <a href = "http://urlib.net/8JMKD3MGP3W34T/44STMLE" target="_blank">Souza et al. Paisagens e Uso da Terra em Nucleos Populacionais e Estabelecimentos Rurais da Regiao do Baixo Tocantins - Para. São José dos Campos: INPE, 2017</a>.
 ]]
 
 Application{
@@ -39,59 +39,69 @@ Application{
 				author = "Souza et al. (2017)"
 			}
 
-			local text = "A comunidade "..cell.name.." teve origem há "..cell.idd.." anos. "..
-                         "Em 2013, na comunidade residiam cerca de "..cell.nfam.." famílias, das quais "..
-                         cell.bfam.." recebiam bolsa família. "
+			local text = "The "..cell.name.." community was founded "..cell.idd.." years ago. "..
+                         "In 2013, there were around "..math.floor(cell.nfam).." families, "..
+                         math.floor(cell.bfam).." of them received a family allowance. "
 
 
             if cell.energia == 1 then
-                text = text.."A energia elétrica é provida por linha regular de transmissão desde "..cell.data..". "
+                text = text.."Electric energy was provided by a regular transmission line since "..cell.data..". "
             else
-                text = text.."Não possui linha regular de transmissão de energia elétrica. "
+                text = text.."There was no regular electricity transmission line. "
             end
 
             if cell.il_pub == 1 then
-                text = text.." Possui iluminação pública. "
+                text = text.." It has street lightning. "
             end
 
             if cell.AGUA == 0 then
-                text = text.."Possui poço e/ou rio. "
+                text = text.."It has an artesian well and/or river. "
             else
-                text = text.."Possui poço artesiano e/ou encanada. "
+                text = text.."It has an artesian well and/or piped. "
             end
 
             local infra = {}
-            if cell.MERC == 1 then table.insert(infra, "mercado") end
+            if cell.MERC == 1 then table.insert(infra, "market") end
             if cell.BAR  == 1 then table.insert(infra, "bar") end
-            if cell.CFUT == 1 then table.insert(infra, "campo de futebol") end
-            if cell.PSAU == 1 then table.insert(infra, "posto de saúde") end
-            if cell.IG_CAT == 1 or cell.IG_EV == 1 then table.insert(infra, "templo religioso") end
+            if cell.CFUT == 1 then table.insert(infra, "soccer field") end
+            if cell.PSAU == 1 then table.insert(infra, "health center") end
+            if cell.IG_CAT == 1 or cell.IG_EV == 1 then table.insert(infra, "religious temple") end
 
 
             if #infra > 0 then
-              text = text.."Na comunidade há "..table.concat(infra, ", ")..". "
+              text = text.."In the community there are "..table.concat(infra, ", ")..". "
             end
 
+--[[
+            local atec_translate = {
+                ["agricultura"] = "agriculture",
+                ["produção de açaí"] = "acai",
+                ["produção de farinha"] = "cassava flour",
+            }
+
+            cell.ATEC_TIPO = atec_translate[cell.ATEC_TIPO]
+--]]
+
             if cell.AT_ECON == 1 then
-                text = text.."A "..cell.ATEC_TIPO.." é a principal atividade econômica da comunidade. "
+                text = text.."The "..cell.ATEC_TIPO.." is the main economic activity of the community. "
             end
 
             local production = {}
-            if cell.ARROZ   == 1 then table.insert(production, "arroz") end
+            if cell.ARROZ   == 1 then table.insert(production, "rice") end
             if cell.FARINHA == 1 then table.insert(production, "farinha") end
-            if cell.FRUTAS  == 1 then table.insert(production, "frutas") end
+            if cell.FRUTAS  == 1 then table.insert(production, "fruits") end
             if cell.ACAI    == 1 then table.insert(production, "acai") end
 
             if #production > 0 then
-              text = text.."Na comunidade há produção de "..table.concat(production, ", ")..". "
+              text = text.."In the community they produce "..table.concat(production, ", ")..". "
             end
 
             if cell.pesca == 1 then
-                text = text.."A pesca também é uma atividade importante na comunidade."
+                text = text.."Fishing is also an important activity in the community. "
             end
 
             if cell.AT_ECON == 2 then
-                text = text.." As principais atividades econômicas da comunidade são "..cell.ATEC_TIPO..". "
+                text = text.." The main economic activities of the community are "..cell.ATEC_TIPO..". "
             end
 
 			mreport:addText(text)

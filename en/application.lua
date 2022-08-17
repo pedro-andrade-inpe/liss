@@ -36,7 +36,7 @@ Application{
 	fieldworks = View{
         color = "Set2",
 		select = "title",
-        description = "Trabalhos de campo.",
+        description = "Fieldworks regions.",
 		report = function(cell)
 			local report = Report{
 				title = cell.title,

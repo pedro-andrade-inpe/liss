@@ -16,9 +16,10 @@ Application{
 	project = "BR230.tview",
 	description = description,
 	base = "roadmap",
+	clean = true,
 	template = {navbar = "darkblue", title = "white"},
     display = false,
---[[
+-- [[
      trajectory = View{
 		description = "Route on the BR230.",
 		width = 3,
@@ -109,7 +110,7 @@ Application{
 				mreport:addText(text)
 			end
 
-			local production = {}
+			production = {}
 
 			if cell.ACAI     == 1 then table.insert(production, "acai")     end
 			if cell.GADO     == 1 then table.insert(production, "cattle")   end
