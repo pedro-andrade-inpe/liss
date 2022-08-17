@@ -41,9 +41,6 @@ Application{
 				author = "Dal'Asta et. al (2015)"
 			}
 
-
-            mreport:addImage("photos/"..cell.Nome..".jpg")
-
 			local age = math.ceil(130 * cell.IDDCM / 0.77)
 			local pop = math.ceil(350 * cell.NPES / 0.8)
 
@@ -121,6 +118,7 @@ Application{
 				mreport:addText(string.format("The community produces the following commodities: %s.", table.concat(production, ", ")))
 			end
 
+            mreport:addImage("photos/"..cell.Nome..".jpg")
 			return mreport
 		end
 	}
