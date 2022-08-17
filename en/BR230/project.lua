@@ -29,11 +29,11 @@
 import("gis")
 
 Project{
-	title = "The communities of BR230 (PA)",
+	title = "The communities of BR230",
 	author = "Dal'Asta, et al.",
 	file = "BR230.tview",
 	clean = true,
-	trajectory = "traj.shp",
+	--trajectory = "traj.shp",
 	villages = "points.shp",
 }
 
