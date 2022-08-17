@@ -2,7 +2,7 @@
 import("gis")
 
 project = Project{
-	title = "Fieldworks of LiSS Laboratory",
+	title = "Trabalhos de Campo do LiSS",
 	author = "LiSS",
 	file = "fieldworks.tview",
 	clean = true,
