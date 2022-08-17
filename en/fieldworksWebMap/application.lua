@@ -43,7 +43,7 @@ Application{
 				author = descriptions[cell.app].date
 			}
 
-            local link = "https://combinatronics.com/pedro-andrade-inpe/liss/main/"..
+            local link = "https://combinatronics.com/pedro-andrade-inpe/liss/main/en/"..
               cell.app.."/"..cell.app.."WebMap/index.html"
 
 			report:addText("See the application <a href = \""..link.."\" target=\"_blank\">here</a>.")
