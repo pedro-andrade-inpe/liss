@@ -3,14 +3,14 @@ import("publish")
 
 local description = [[
 	This report presents the methodology and the initial results obtained at the fieldwork along riverine settlements at
-	Arapiuns River, tributary of Tapajós River, municipality of Santarém, Pará state, from June 4 th to 15 th , 2012.
+	Arapiuns River, tributary of Tapajós River, municipality of Santarém, Pará state, from June 4th to 15th, 2012.
 	This research reproduces and extends the data collection accomplished for Tapajós communities in 2009, regarding the
 	infrastructure and network relations of riverine human settlements. The main objective was to characterize the
-	organization and interdependence between settlements concerning to:infrastructure, health and education services,
-	land use, ecosystem services provision and perception of welfare.
-	Source: Escada et. al (2013) Infraestrutura, Serviços e Conectividade das Comunidades Ribeirinhas do Arapiuns, PA.
+	organization and interdependence between settlements concerning to: infrastructure, health and education services,
+	land use, ecosystem services provision, and welfare perception.
+	Source: <a href="http://mtc-m16d.sid.inpe.br/col/sid.inpe.br/mtc-m19/2013/04.29.14.32/doc/publicacao.pdf" target="_blank"> Escada et. al (2013) Infraestrutura, Serviços e Conectividade das Comunidades Ribeirinhas do Arapiuns, PA.
 	Relatório Técnico de Atividade de Campo - Projeto UrbisAmazônia e Projeto Cenários para a Amazônia: Uso da terra,
-	Biodiversidade e Clima, INPE.
+	Biodiversidade e Clima, INPE</a>.
 ]]
 
 Application{
@@ -20,7 +20,8 @@ Application{
 	base = "roadmap",
 	template = {navbar = "darkblue", title = "white"},
     display = false,
-	trajectory = View{
+	--[[
+    trajectory = View{
 		description = "Route on the Arapiuns River.",
 		width = 2,
 		border = "blue",
@@ -28,6 +29,7 @@ Application{
 			time = 100
 		}
 	},
+    --]]
 	villages = View{
 		description = "Riverine settlements corresponded to Indian tribes, villages, and communities that are inserted into public lands.",
 		select = {"Nome", "UC"},
