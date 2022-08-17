@@ -3,8 +3,15 @@
 import("publish")
 
 local description = [[
-...
-Source: <a href = "http://urlib.net/8JMKD3MGP3W34T/44STMLE" target="_blank">Souza et al. Paisagens e Uso da Terra em Nucleos Populacionais e Estabelecimentos Rurais da Regiao do Baixo Tocantins - Para. São José dos Campos: INPE, 2017</a>.
+This application describes the fieldwork activities carried out in the region of Baixo
+Tocantins, Cametá micro-region in the state of Pará, in the years 2018 and
+2019. These activities aimed to collect data to characterize the
+region in two ways. The first aspect concerns the different forms
+of land use and occupation and the main production methods associated
+to agricultural and agroforestry extractive activities. The second aspect is the
+distribution and type of urban infrastructure, as well as access to services
+in populational areas.<br>
+Source: <a href = "http://urlib.net/8JMKD3MGP3W34T/44STMLE" target="_blank">Souza et al. Paisagens e Uso da Terra em Nucleos Populacionais e Estabelecimentos Rurais da Regiao do Baixo Tocantins - Para</a>.
 ]]
 
 Application{
