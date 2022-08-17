@@ -6,7 +6,7 @@
   <Author>Dal'Asta, et al.</Author>
 
   <te_da:DataSourceList xmlns:te_common="http://www.terralib.org/schemas/common">
-    <te_da:DataSource access_driver="OGR" id="e2cf9e79-7470-40ab-aeb8-7ca74d6900fe" type="OGR">
+    <te_da:DataSource access_driver="OGR" id="13b03bde-9d3a-4d32-b9f3-5dfcd62cfd6e" type="OGR">
       <te_da:Title>points</te_da:Title>
       <te_da:Description>Created on TerraME</te_da:Description>
       <te_da:URI>file%3A%2F%2FC%3A%2FUsers%2Fpedro%2FDropbox%2Fgithub%2Fliss%2Fen%2Fsantarem%2Fpoints.shp</te_da:URI>
@@ -16,12 +16,12 @@
   <ComponentList/>
 
   <te_map:LayerList>
-    <te_map:DataSetLayer id="acaf82fd-af11-4204-b9f1-c55c44a2b92a">
+    <te_map:DataSetLayer id="b3a48bc9-c485-4119-bb61-0ac9691d34c7">
       <te_map:Title>points</te_map:Title>
       <te_map:Visible>NOT_VISIBLE</te_map:Visible>
       <te_map:Encoding>ISO-8859-1</te_map:Encoding>
       <te_map:DataSetName>points</te_map:DataSetName>
-      <te_map:DataSourceId>e2cf9e79-7470-40ab-aeb8-7ca74d6900fe</te_map:DataSourceId>
+      <te_map:DataSourceId>13b03bde-9d3a-4d32-b9f3-5dfcd62cfd6e</te_map:DataSourceId>
       <te_map:SRSInfo>
         <te_map:SRID>4326</te_map:SRID>
         <te_map:Proj4>+proj=longlat +datum=WGS84 +no_defs</te_map:Proj4>

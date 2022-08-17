@@ -2,8 +2,8 @@
 import("publish")
 
 local description = [[
-The report presents the methodology and results obtained during fieldwork in Upland communities in the Planalto Santareno region, municipalities of Belterra, Mojuí dos Campos, and Santarém, state of Pará, from September 6th to 26th in 2013. This work complements the fieldwork carried out previously in the riverside communities of Tapajós and Arapiuns in 2009 and 2012, respectively. The main objective is to identify and characterize communities regarding infrastructure, health and education services, as well as land uses and land cover, and rural production.
-Source: <a href="http://urlib.net/8JMKD3MGP3W34P/3PAAHQ5"  target="_blank">Dal'Asta et al. As Comunidades De Terra Firme Do Sudoeste Do Pará: População, Infraestrutura, Serviços, Uso Da Terra E Conectividades. São José dos Campos: INPE, 2017</a>.
+The report presents the methodology and results obtained during fieldwork in Upland communities in the Planalto Santareno region, municipalities of Belterra, Mojuí dos Campos, and Santarém, state of Pará, from September 6th to 26th in 2013. This work complements the fieldwork carried out previously in the riverside communities of Tapajós and Arapiuns in 2009 and 2012, respectively. The main objective is to identify and characterize communities regarding infrastructure, health and education services, as well as land uses and land cover, and rural production.<br>
+Source: <a href="http://urlib.net/8JMKD3MGP3W34P/3PAAHQ5"  target="_blank">Dal'Asta et al. As Comunidades De Terra Firme Do Sudoeste Do Pará: População, Infraestrutura, Serviços, Uso Da Terra E Conectividades</a>.
 ]]
 
 Application{
