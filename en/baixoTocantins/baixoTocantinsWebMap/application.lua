@@ -47,9 +47,13 @@ Application{
 			}
 
 			local text = "The "..cell.name.." community was founded "..math.floor(cell.idd).." years ago. "..
-                         "In 2013, there were around "..math.floor(cell.nfam).." families, "..
-                         math.floor(cell.bfam).." of them received a family allowance. "
+                         "In 2013, there were around "..math.floor(cell.nfam).." families, "
 
+            if math.floor(cell.bfam) == 0 then
+               text = text.." none received a family allowance. "
+            else
+               text = text..math.floor(cell.bfam).." of them received a family allowance. "
+            end
 
             if cell.energia == 1 then
                 text = text.."Electric energy was provided by a regular transmission line since "..cell.data..". "
