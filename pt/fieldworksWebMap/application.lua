@@ -34,7 +34,7 @@ Application{
     zoom = 7,
 	template = {navbar = "darkblue", title = "white"},
     display = false,
-	fieldworks = View{
+	campos = View{
         color = "Set2",
 		select = "title",
         description = "Trabalhos de campo.",
