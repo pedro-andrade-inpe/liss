@@ -11,7 +11,7 @@ de uso e ocupação do solo e os principais métodos de produção associados
 às atividades extrativistas agrícolas e agroflorestais. O segundo aspecto é a
 distribuição e o tipo de infraestrutura urbana, bem como o acesso aos serviços
 em áreas habitadas.<br>
-Source: <a href = "http://urlib.net/8JMKD3MGP3W34T/44STMLE" target="_blank">Souza et al. Paisagens e Uso da Terra em Nucleos Populacionais e Estabelecimentos Rurais da Regiao do Baixo Tocantins - Para</a>.
+Fonte: <a href = "http://urlib.net/8JMKD3MGP3W34T/44STMLE" target="_blank">Souza et al. Paisagens e Uso da Terra em Nucleos Populacionais e Estabelecimentos Rurais da Regiao do Baixo Tocantins - Para</a>.
 ]]
 
 Application{

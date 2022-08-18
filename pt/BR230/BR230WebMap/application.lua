@@ -5,9 +5,9 @@ local description = [[
     Esta aplicação apresenta resultados do trabalho de campo realizado de 06 a 26 de setembro de 2013, em comunidades de terra firme no Distrito Florestal Sustentável da BR-163, sudoeste do Pará.
     Este trabalho complementa e reproduz parcialmente pesquisas de campo realizadas em comunidades ribeirinhas dos rios Tapajós e Arapiuns em 2009 e 2012, respectivamente. O objetivo principal foi caracterizar a
 organização e interdependência entre assentamentos quanto a: infraestrutura, serviços de saúde e educação,
-uso da terra, prestação de serviços ecossistêmicos e percepção de bem-estar.<br>
+uso da terra, prestação de serviços ecossistêmicos e percepção de bem-estar. Este trabalho de campo foi parcialmente fomentado pelos projetos  UrbisAmazônia (ITV-DS Instituto Tecnológico Vale - Desenvolvimento Sustentável processo #3.611.000.00/11) e LUA-IAM (FAPESP processo #08/58112-0).<br>
 	Fonte: <a href = "http://mtc-m21b.sid.inpe.br/rep/8JMKD3MGP3W34P/3PAAHQ5" target="_blank">Dal'Asta et. al (2015) As comunidades de terra firme do Sudoeste do Pará: população, infraestrutura, serviços, uso da terra e concetividades. Expedição de campo 2013.
-	Relatório Técnico de Atividade de Campo</a>.<br> Este trabalho de campo foi parcialmente fomentado pelos projetos  UrbisAmazônia (ITV-DS Instituto Tecnológico Vale - Desenvolvimento Sustentável processo #3.611.000.00/11) e LUA-IAM (FAPESP processo #08/58112-0).
+	Relatório Técnico de Atividade de Campo</a>.
 ]]
 
 Application{
