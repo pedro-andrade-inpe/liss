@@ -2,7 +2,7 @@
 import("publish")
 
 local description = [[
-	This report presents the methodology and the initial results obtained at the fieldwork along riverine settlements at
+	NEW LINES. This report presents the methodology and the initial results obtained at the fieldwork along riverine settlements at
 	Arapiuns River, tributary of Tapajós River, municipality of Santarém, Pará state, from June 4 th to 15 th , 2012.
 	This research reproduces and extends the data collection accomplished for Tapajós communities in 2009, regarding the
 	infrastructure and network relations of riverine human settlements. The main objective was to characterize the
