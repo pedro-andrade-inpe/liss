@@ -22,6 +22,7 @@ descriptions = {
 }
 
 local description = [[
+    (An English version of this application is available <a href="https://combinatronics.com/pedro-andrade-inpe/liss/main/en/fieldworksWebMap/index.html">here</a>)<br><br>
 	Esta página descreve os trabalhos de campo do laboratório  <a href="https://www.lissinpe.com.br/" target="_blank">LiSS</a> na Amazônia Brasileira. Clique em um retângulo no mapa para ter mais informações e navegar por uma aplicação específica. <br>
     Cada um dos trabalhos de campo aqui descritos foi fomentado por diferentes fontes, descritas nas respectivas aplicações. A ferramenta para criar esta aplicação foi parcialmente fomentada pelo projeto <a href="http://nexus.ccst.inpe.br/" target="_blank">Nexus</a>, processo FAPESP #2017/22269-2.
 ]]
