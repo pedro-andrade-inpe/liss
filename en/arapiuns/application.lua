@@ -30,7 +30,7 @@ Application{
 	},
     --]]
 	villages = View{
-		description = "Riverine settlements corresponded to indigenous tribes, villages, and communities that are inserted into public lands.",
+		description = "XXRiverine settlements corresponded to indigenous tribes, villages, and communities that are inserted into public lands.",
 		select = {"Nome", "UC"},
 		icon = {"home", "forest"},
 		label = {"PAE Lago Grande", "Conservation Unit"},
