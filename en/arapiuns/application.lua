@@ -30,10 +30,10 @@ Application{
 	},
     --]]
 	villages = View{
-		description = "XXRiverine settlements corresponded to indigenous tribes, villages, and communities that are inserted into public lands.",
+		description = "Riverine settlements corresponded to indigenous tribes, villages, and communities that are inserted into public lands.",
 		select = {"Nome", "UC"},
-		icon = {"home", "forest"},
-		label = {"PAE Lago Grande", "Conservation Unit"},
+		icon = {"home", "forest"},-- "harbor"},--, "lake"},
+		label = {"PAE Lago Grande", "Conservation Unit"},--, "TI Maró"},--, "Gleba Nova Olinda"},
 		report = function(cell)
 			local mreport = Report{
 				title = cell.Nome,
