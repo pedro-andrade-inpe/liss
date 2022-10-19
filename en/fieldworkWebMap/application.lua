@@ -22,29 +22,29 @@ descriptions = {
 }
 
 local description = [[
-    (A versão em português desta aplicação está <a href="https://combinatronics.com/pedro-andrade-inpe/liss/main/pt/fieldworksWebMap/index.html">aqui</a>)<br><br>
-	This webpage describes some fieldworks of <a href="https://www.lissinpe.com.br/" target="_blank">LiSS laboratory</a> in the Brazilian Amazonia. Please click in a box in the map to see more information and to navigate through specific applications.<br>Each of these fieldworks was funded by a set of agencies, shown in the respective application. The toolkit to create this application was partially funded by <a href="http://nexus.ccst.inpe.br/" target="_blank">Nexus project</a>, grant #2017/22269-2, São Paulo Research Foundation (FAPESP).
+    (A versão em português desta aplicação está <a href="https://combinatronics.io/pedro-andrade-inpe/liss/main/pt/fieldworkWebMap/index.html">aqui</a>)<br><br>
+	This webpage describes some fieldwork of <a href="https://www.lissinpe.com.br/" target="_blank">LiSS laboratory</a> in the Brazilian Amazonia. Please click in a box in the map to see more information and to navigate through specific applications.<br>Each fieldwork was funded by a set of agencies, shown in the respective application. The toolkit to create this application was partially funded by <a href="http://nexus.ccst.inpe.br/" target="_blank">Nexus project</a>, grant #2017/22269-2, São Paulo Research Foundation (FAPESP).
 ]]
 
 Application{
     key = "AIzaSyA1coAth-Bo7m99rnxOm2oOBB88AmaSbOk",
-	project = "fieldworks.tview",
+	project = "fieldwork.tview",
 	description = description,
 	base = "roadmap",
     zoom = 7,
 	template = {navbar = "darkblue", title = "white"},
     display = false,
-	fieldworks = View{
+	fieldwork = View{
         color = "Set2",
 		select = "title",
-        description = "Fieldworks regions.",
+        description = "Fieldwork regions.",
 		report = function(cell)
 			local report = Report{
 				title = cell.title,
 				author = descriptions[cell.app].date
 			}
 
-            local link = "https://combinatronics.com/pedro-andrade-inpe/liss/main/en/"..
+            local link = "https://combinatronics.io/pedro-andrade-inpe/liss/main/en/"..
               cell.app.."/"..cell.app.."WebMap/index.html"
 
 			report:addText("See the application <a href = \""..link.."\" target=\"_blank\">here</a>.")
