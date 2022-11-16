@@ -6,7 +6,7 @@
   <Author>LiSS</Author>
 
   <te_da:DataSourceList xmlns:te_common="http://www.terralib.org/schemas/common">
-    <te_da:DataSource access_driver="OGR" id="035a5a4b-85bd-46a9-b24b-6b2a41ce876f" type="OGR">
+    <te_da:DataSource access_driver="OGR" id="47fc8ac4-ecaf-4ba6-bdcd-ec4e47431e76" type="OGR">
       <te_da:Title>campos</te_da:Title>
       <te_da:Description>Created on TerraME</te_da:Description>
       <te_da:URI>file%3A%2F%2F..%2Fmeta-app-data%2Ffieldwork.shp</te_da:URI>
@@ -16,12 +16,12 @@
   <ComponentList/>
 
   <te_map:LayerList>
-    <te_map:DataSetLayer id="8dcfa92c-ac9e-40b4-a0f6-6b2b5bbd5e59">
+    <te_map:DataSetLayer id="e51e645e-86d8-483f-a643-d109d3d4cc06">
       <te_map:Title>campos</te_map:Title>
       <te_map:Visible>NOT_VISIBLE</te_map:Visible>
       <te_map:Encoding>ISO-8859-1</te_map:Encoding>
       <te_map:DataSetName>fieldwork</te_map:DataSetName>
-      <te_map:DataSourceId>035a5a4b-85bd-46a9-b24b-6b2a41ce876f</te_map:DataSourceId>
+      <te_map:DataSourceId>47fc8ac4-ecaf-4ba6-bdcd-ec4e47431e76</te_map:DataSourceId>
       <te_map:SRSInfo>
         <te_map:SRID>4326</te_map:SRID>
         <te_map:Proj4>+proj=longlat +datum=WGS84 +no_defs</te_map:Proj4>

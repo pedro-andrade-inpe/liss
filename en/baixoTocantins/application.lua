@@ -45,7 +45,7 @@ Application{
 				title = cell.name,
 				author = "Souza et al. (2017)"
 			}
-
+--[[
 			local text = "The "..cell.name.." community was founded "..math.floor(cell.idd).." years ago. "..
                          "In 2013, there were around "..math.floor(cell.nfam).." families, "
 
@@ -82,7 +82,7 @@ Application{
             if #infra > 0 then
               text = text.."In the community there are "..table.concat(infra, ", ")..". "
             end
-
+--]]
 --[[
             local atec_translate = {
                 ["agricultura"] = "agriculture",
@@ -92,9 +92,9 @@ Application{
 
             cell.ATEC_TIPO = atec_translate[cell.ATEC_TIPO]
 --]]
-
+--[[
             if cell.AT_ECON == 1 then
-                text = text.."The "..cell.ATEC_TIPO.." is the main economic activity of the community. "
+                text = text.."The "..cell.English.." is the main economic activity of the community. "
             end
 
             local production = {}
@@ -112,7 +112,7 @@ Application{
             end
 
             if cell.AT_ECON == 2 then
-                text = text.." The main economic activities of the community are "..cell.ATEC_TIPO..". "
+                text = text.." The main economic activities of the community are "..cell.English..". "
             end
 
 			mreport:addText(text)
@@ -128,7 +128,7 @@ Application{
             if cell.Uso ~= "NO" then
                 mreport:addImage("photos/Uso/"..cell.Uso..".jpg")
             end
-
+--]]
 			return mreport
 		end
 	}
