@@ -19,16 +19,14 @@ Application{
 	base = "roadmap",
 	template = {navbar = "darkblue", title = "white"},
     display = false,
-	--[[
     trajectory = View{
 		description = "Route on the Arapiuns River.",
 		width = 2,
 		border = "blue",
 		icon = {
-			time = 100
+			time = 60
 		}
 	},
-    --]]
 	villages = View{
 		description = "Riverine settlements corresponded to indigenous tribes, villages, and communities that are inserted into public lands.",
 		select = {"Nome", "UC"},
