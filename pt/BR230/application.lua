@@ -18,7 +18,6 @@ Application{
 	clean = true,
 	template = {navbar = "darkblue", title = "white"},
     display = false,
---[[
      trajectory = View{
 		description = "Route on the BR230.",
 		width = 3,
@@ -29,7 +28,6 @@ Application{
 			time = 20
 		}
 	},
-    --]]
 	villages = View{
 		description = "Assentamentos correspondem a agrovilas, vilas e comunidades.",
 		select = {"CMM", "TIPO"},
