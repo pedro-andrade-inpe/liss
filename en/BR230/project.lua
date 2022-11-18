@@ -33,7 +33,7 @@ Project{
 	author = "Dal'Asta, et al.",
 	file = "BR230.tview",
 	clean = true,
-	--trajectory = "traj.shp",
+	trajectory = "traj.shp",
 	villages = "points.shp",
 }
 
