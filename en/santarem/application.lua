@@ -14,7 +14,6 @@ Application{
 	clean = true,
 	template = {navbar = "darkblue", title = "white"},
     display = false,
---[[
     trajectory = View{
 		description = "Route.",
 		width = 3,
@@ -25,7 +24,6 @@ Application{
 			time = 20
 		}
 	},
-    --]]
     -- [[
 	points = View{
 		description = "Settlements corresponded to agrovilas, villages and communities.",
