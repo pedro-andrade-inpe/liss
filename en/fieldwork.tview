@@ -6,22 +6,22 @@
   <Author>LiSS</Author>
 
   <te_da:DataSourceList xmlns:te_common="http://www.terralib.org/schemas/common">
-    <te_da:DataSource access_driver="OGR" id="793dc85c-fca7-4eee-841c-6fff26d15500" type="OGR">
+    <te_da:DataSource access_driver="OGR" id="50679502-2242-4f0e-8399-5aea200c17d6" type="OGR">
       <te_da:Title>fieldwork</te_da:Title>
       <te_da:Description>Created on TerraME</te_da:Description>
-      <te_da:URI>file%3A%2F%2F..%2Fmeta-app-data%2Ffieldworks.shp</te_da:URI>
+      <te_da:URI>file%3A%2F%2F..%2Fmeta-app-data%2Ffieldwork.shp</te_da:URI>
     </te_da:DataSource>
   </te_da:DataSourceList>
 
   <ComponentList/>
 
   <te_map:LayerList>
-    <te_map:DataSetLayer id="868cfbd9-cdbc-4ea8-a495-95cdf7d19d67">
+    <te_map:DataSetLayer id="49d52ee6-2e65-4ed7-a1cb-4e5289bf0bba">
       <te_map:Title>fieldwork</te_map:Title>
       <te_map:Visible>NOT_VISIBLE</te_map:Visible>
       <te_map:Encoding>ISO-8859-1</te_map:Encoding>
-      <te_map:DataSetName>fieldworks</te_map:DataSetName>
-      <te_map:DataSourceId>793dc85c-fca7-4eee-841c-6fff26d15500</te_map:DataSourceId>
+      <te_map:DataSetName>fieldwork</te_map:DataSetName>
+      <te_map:DataSourceId>50679502-2242-4f0e-8399-5aea200c17d6</te_map:DataSourceId>
       <te_map:SRSInfo>
         <te_map:SRID>4326</te_map:SRID>
         <te_map:Proj4>+proj=longlat +datum=WGS84 +no_defs</te_map:Proj4>

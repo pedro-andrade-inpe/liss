@@ -6,6 +6,6 @@ project = Project{
 	author = "LiSS",
 	file = "fieldwork.tview",
 	clean = true,
-	fieldwork = "../meta-app-data/fieldworks.shp"
+	fieldwork = "../meta-app-data/fieldwork.shp"
 }
 
