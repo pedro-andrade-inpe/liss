@@ -22,7 +22,7 @@ descriptions = {
 }
 
 local description = [[
-    (An English version of this application is available <a href="https://combinatronics.io/pedro-andrade-inpe/liss/main/en/fieldworkWebMap/index.html">here</a>)<br><br>
+    (An English version of this application is available <a href="https://pedro-andrade-inpe.github.io/liss/main/en/fieldworkWebMap/index.html">here</a>)<br><br>
 	Esta página descreve os trabalhos de campo do laboratório  <a href="https://www.lissinpe.com.br/" target="_blank">LiSS</a> na Amazônia Brasileira. Clique em um retângulo no mapa para ter mais informações e navegar por uma aplicação específica. <br>
     Cada um dos trabalhos de campo aqui descritos foi fomentado por diferentes fontes, descritas nas respectivas aplicações. A ferramenta para criar esta aplicação foi parcialmente fomentada pelo projeto <a href="http://nexus.ccst.inpe.br/" target="_blank">Nexus</a>, processo FAPESP #2017/22269-2.
 ]]
@@ -45,7 +45,7 @@ Application{
 				author = descriptions[cell.app].date
 			}
 
-            local link = "https://combinatronics.io/pedro-andrade-inpe/liss/main/pt/"..
+            local link = "https://pedro-andrade-inpe.github.io/liss/pt/"..
               cell.app.."/"..cell.app.."WebMap/index.html"
 
 			report:addText("Veja a aplicação <a href = \""..link.."\" target=\"_blank\">aqui</a>.")
