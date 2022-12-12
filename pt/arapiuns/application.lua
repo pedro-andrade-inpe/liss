@@ -19,20 +19,18 @@ Application{
 	base = "roadmap",
 	template = {navbar = "darkblue", title = "white"},
     display = false,
-   --[[
 	trajectory = View{
 		description = "Route on the Arapiuns River.",
 		width = 2,
 		border = "blue",
 		icon = {
-			time = 100
+			time = 90
 		}
 	},
-    --]]
 	villages = View{
 		description = "As comunidades ribeirinhas correspondem a tribos indígenas, vilas e comunidades que estão localizadas em terras públicas.",
 		select = {"Nome", "UC"},
-		icon = {"home", "forest"},
+        icon = {"yellow_home", "green_home"},
 		label = {"PAE Lago Grande", "Unidade de Conservação"},
 		report = function(cell)
 			local mreport = Report{

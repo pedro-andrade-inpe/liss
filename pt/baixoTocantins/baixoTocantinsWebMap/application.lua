@@ -38,7 +38,7 @@ Application{
 	points = View{
 		description = "Assentamentos correspondem a agrovilas, vilas e comunidades.",
 		select = {"name", "micon2"},
-		icon = {"home"},
+		icon = {"yellow_home"},
 		label = {"home"},
 		report = function(cell)
 			local mreport = Report{

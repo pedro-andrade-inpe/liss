@@ -6,7 +6,7 @@
   <Author>Carneiro, H.</Author>
 
   <te_da:DataSourceList xmlns:te_common="http://www.terralib.org/schemas/common">
-    <te_da:DataSource access_driver="OGR" id="5df31d7b-0e12-4f25-b1ed-51286dc136a3" type="OGR">
+    <te_da:DataSource access_driver="OGR" id="153a081d-ecb8-4b6f-86c4-4db68cfacd39" type="OGR">
       <te_da:Title>villages</te_da:Title>
       <te_da:Description>Created on TerraME</te_da:Description>
       <te_da:URI>file%3A%2F%2FC%3A%2FUsers%2Fpedro%2FDropbox%2Fgithub%2Fliss%2Fpt%2Farapiuns%2Fpoints.shp</te_da:URI>
@@ -16,12 +16,12 @@
   <ComponentList/>
 
   <te_map:LayerList>
-    <te_map:DataSetLayer id="f6c21cbe-1c79-42d9-acff-09b4acab6aa9">
+    <te_map:DataSetLayer id="cf129189-7e9a-45ec-adaf-658799a67a79">
       <te_map:Title>villages</te_map:Title>
       <te_map:Visible>NOT_VISIBLE</te_map:Visible>
       <te_map:Encoding>ISO-8859-1</te_map:Encoding>
       <te_map:DataSetName>points</te_map:DataSetName>
-      <te_map:DataSourceId>5df31d7b-0e12-4f25-b1ed-51286dc136a3</te_map:DataSourceId>
+      <te_map:DataSourceId>153a081d-ecb8-4b6f-86c4-4db68cfacd39</te_map:DataSourceId>
       <te_map:SRSInfo>
         <te_map:SRID>4326</te_map:SRID>
         <te_map:Proj4>+proj=longlat +datum=WGS84 +no_defs</te_map:Proj4>

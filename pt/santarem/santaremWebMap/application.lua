@@ -21,13 +21,13 @@ Application{
 		icon = {
 			path = "M150 0 L75 200 L225 200 Z",
 			transparency = 0.2,
-			time = 50
+			time = 45
 		}
 	},
 	points = View{
 		description = "Assentamentos correspodem a agrovilas, vilas e comunidades.",
 		select = {"COMUNIDADE", "micon2"},
-		icon = {"home"},
+		icon = {"yellow_home"},
 		label = {"home"},
 		report = function(cell)
 			local mreport = Report{
