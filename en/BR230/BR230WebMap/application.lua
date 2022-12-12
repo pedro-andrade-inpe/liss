@@ -24,13 +24,13 @@ Application{
 		icon = {
 			path = "M150 0 L75 200 L225 200 Z",
 			transparency = 0.2,
-			time = 20
+			time = 35
 		}
 	},
 	villages = View{
 		description = "Settlements corresponded to agrovilas, villages and communities.",
 		select = {"CMM", "TIPO"},
-		icon = {"home", "forest"},
+        icon = {"yellow_home", "green_home"},
 		label = {"PA", "cmm"},
 		report = function(cell)
 			local mreport = Report{
