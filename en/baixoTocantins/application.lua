@@ -38,14 +38,14 @@ Application{
 	points = View{
 		description = "Settlements correspond to agrovilas, villages, and communities.",
 		select = {"name", "micon2"},
-		icon = {"home"},
+		icon = {"yellow_home"},
 		label = {"home"},
 		report = function(cell)
 			local mreport = Report{
 				title = cell.name,
 				author = "Souza et al. (2017)"
 			}
---[[
+-- [[
 			local text = "The "..cell.name.." community was founded "..math.floor(cell.idd).." years ago. "..
                          "In 2013, there were around "..math.floor(cell.nfam).." families, "
 
@@ -83,7 +83,7 @@ Application{
               text = text.."In the community there are "..table.concat(infra, ", ")..". "
             end
 --]]
---[[
+-- [[
             local atec_translate = {
                 ["agricultura"] = "agriculture",
                 ["produção de açaí"] = "acai",
@@ -92,7 +92,7 @@ Application{
 
             cell.ATEC_TIPO = atec_translate[cell.ATEC_TIPO]
 --]]
---[[
+-- [[
             if cell.AT_ECON == 1 then
                 text = text.."The "..cell.English.." is the main economic activity of the community. "
             end

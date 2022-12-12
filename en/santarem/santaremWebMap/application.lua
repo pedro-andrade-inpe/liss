@@ -21,14 +21,14 @@ Application{
 		icon = {
 			path = "M150 0 L75 200 L225 200 Z",
 			transparency = 0.2,
-			time = 20
+			time = 45
 		}
 	},
     -- [[
 	points = View{
 		description = "Settlements corresponded to agrovilas, villages and communities.",
 		select = {"COMUNIDADE", "micon2"},
-		icon = {"home"},
+		icon = {"yellow_home"},
 		label = {"home"},
 		report = function(cell)
 			local mreport = Report{
