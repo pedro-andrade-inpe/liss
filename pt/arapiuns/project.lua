@@ -33,7 +33,7 @@ project = Project{
 	author = "Carneiro, H.",
 	file = "arapiuns.tview",
 	clean = true,
-	--trajectory = "traj.shp",
+	trajectory = "traj.shp",
 	villages = "points.shp"
 }
 

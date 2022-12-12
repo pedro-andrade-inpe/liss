@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+		<title>Landscapes and Land Use in Communities and Rural Establishments in the Lower Tocantins Region</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+		<link rel="stylesheet" href="./publish.min.css"/>
+	</head>
+	<body>
+		<div class="container">
+			<nav class="navbar navbar-fixed-top navbar-light" style="background-color: rgba(0, 0, 139, 1);" role="navigation">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand custom-font-app-title" style="color: rgba(255, 255, 255, 1);">Landscapes and Land Use in Communities and Rural Establishments in the Lower Tocantins Region</a>
+					</div>
+					
+				</div>
+			</nav>
+		</div>
+		<div class="navbar-offset"></div>
+		<div id="map-canvas">
+			<div id="map"></div>
+		</div>
+		<div class="row main-row">
+		<!-- Menu -->
+			<div class="col-sm-4 col-md-2 sidebar sidebar-left pull-left">
+				<div class="panel-group sidebar-body panel-height" id="accordion-left">
+					<div class="panel panel-default">
+						<div class="panel-heading padding-header" >
+							<h4 class="panel-title custom-font-subtitle border body-font-color">
+								<i class=""></i><a id="layers-title" data-toggle="collapse" href="#layers"> Layers</a>
+								<span class="pull-right slide-submenu icon-style"><i class="fa fa-times"></i></span>
+							</h4>
+						</div>
+						<div id="layers" class="panel-collapse collapse in overflow-y">
+								<div class="panel-body list-group padding-body">
+										<label>
+											<input name="points" type="checkbox">
+											<a id="points" href="javascript:void(0);"> Points </a>
+										</label>
+								</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading padding-header">
+							<h4 class="panel-title custom-font-subtitle border body-font-color">
+								<i class=""></i><a id="description-title" data-toggle="collapse" href="#properties"> Description</a>
+							</h4>
+						</div>
+						<div id="properties" class="panel-collapse collapse overflow-y">
+							<div class="panel-body padding-body">
+								<p class="custom-font-body" id="layer-description"></p>
+								<button id="more" type="button" class="btn btn-default custom-font-more" style="display:none;">
+									More
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading padding-header">
+							<h4 class="panel-title custom-font-subtitle border body-font-color">
+								<i class=""></i><a id="legend-title" data-toggle="collapse" href="#legends"> Legend</a>
+							</h4>
+						</div>
+						<div id="legends" class="panel-collapse collapse overflow-y">
+							<div id="legend" class="panel-body padding-body custom-font-legend"></div>
+						</div>
+					</div>
+					<div id="panel-download" class="panel panel-default">
+						<div class="panel-heading padding-header" style="height: 29px;">
+							<h4 class="panel-title custom-font-subtitle border body-font-color">
+								<i class="fa fa-download"></i><a id="download-title"> Download</a>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- fim do menu -->
+		</div>
+		<div class="mini-submenu mini-submenu-left pull-left icon-style">
+			<i class="fa fa-bars"></i>
+		</div>
+		<img id="loader" src="./default.gif" hidden="hidden"/>
+		<div id="loader-message"><h4 id="loader-message-text"></h4></div>
+		<footer class="navbar-default navbar-fixed-bottom">
+			<div id="footer" class="container-fluid">
+				<p>Powered by package <a href="https://github.com/TerraME/publish" target="_blank">publish</a> of <a href="http://www.terrame.org" target="_blank">TerraME</a>.</p>
+			</div>
+		</footer>
+		<div class="modal fade modal-player" id="modal-app-description" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title custom-font-subtitle">Landscapes and Land Use in Communities and Rural Establishments in the Lower Tocantins Region</h4>
+					</div>
+					<div class="modal-body">
+						<p class="custom-font-body">This application describes the fieldwork activities carried out in the region of Baixo
+Tocantins, Cametá micro-region in the state of Pará, in the years 2018 and
+2019. These activities aimed to collect data to characterize the
+region in two ways. The first aspect concerns the different forms
+of land use and occupation and the main production methods associated
+to agricultural and agroforestry extractive activities. The second aspect is the
+distribution and type of urban infrastructure, as well as access to services
+in populational areas.<br>
+Source: <a href = "http://urlib.net/8JMKD3MGP3W34T/44STMLE" target="_blank">Souza et al. Paisagens e Uso da Terra em Nucleos Populacionais e Estabelecimentos Rurais da Regiao do Baixo Tocantins - Para</a>.
+</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-info" data-dismiss="modal">Ok</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-pointsCatalão" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsCatalão"> Catalão</h2>
+						<p class="text-muted custom-font-body">Souza et al. (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsCatalão">
+													<p class="custom-font-body">The Catalão community was founded 50 years ago. In 2013, there were around 26 families,  none received a family allowance. Electric energy was provided by a regular transmission line since 2003.  It has street lightning. It has an artesian well and/or piped. Fishing is also an important activity in the community. </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DSCN6510.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-pointsTapera" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsTapera"> Tapera</h2>
+						<p class="text-muted custom-font-body">Souza et al. (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsTapera">
+													<p class="custom-font-body">The Tapera community was founded 360 years ago. In 2013, there were around 80 families,  none received a family allowance. Electric energy was provided by a regular transmission line since 1998.  It has street lightning. It has an artesian well and/or piped. Fishing is also an important activity in the community. </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DSCN6466.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DSCN0799.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-pointsIcatu" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsIcatu"> Icatu</h2>
+						<p class="text-muted custom-font-body">Souza et al. (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsIcatu">
+													<p class="custom-font-body">The Icatu community was founded 250 years ago. In 2013, there were around 85 families, 1 of them received a family allowance. Electric energy was provided by a regular transmission line since 2003.  It has street lightning. It has an artesian well and/or piped. Fishing is also an important activity in the community. </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DJI_0011.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DSCN0334.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DSCN0695.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-pointsPiçarreiras" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPiçarreiras"> Piçarreiras</h2>
+						<p class="text-muted custom-font-body">Souza et al. (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPiçarreiras">
+													<p class="custom-font-body">The Piçarreiras community was founded 70 years ago. In 2013, there were around 12 families, 1 of them received a family allowance. Electric energy was provided by a regular transmission line since 2016.  It has street lightning. It has an artesian well and/or piped. Fishing is also an important activity in the community. </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DSCN9906.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-pointsAçaizalCentro" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsAçaizalCentro"> Açaizal Centro</h2>
+						<p class="text-muted custom-font-body">Souza et al. (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsAçaizalCentro">
+													<p class="custom-font-body">The Açaizal Centro community was founded 0 years ago. In 2013, there were around 55 families,  none received a family allowance. Electric energy was provided by a regular transmission line since 2005. It has an artesian well and/or piped. </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DSCN0430.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-pointsFazenda" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsFazenda"> Fazenda</h2>
+						<p class="text-muted custom-font-body">Souza et al. (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsFazenda">
+													<p class="custom-font-body">The Fazenda community was founded 45 years ago. In 2013, there were around 240 families,  none received a family allowance. Electric energy was provided by a regular transmission line since 2010 ou 2011.  It has street lightning. It has an artesian well and/or piped. Fishing is also an important activity in the community. </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DJI_0450.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-pointsRioTentem" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsRioTentem"> Rio Tentem</h2>
+						<p class="text-muted custom-font-body">Souza et al. (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsRioTentem">
+													<p class="custom-font-body">The Rio Tentem community was founded 40 years ago. In 2013, there were around 300 families, 1 of them received a family allowance. Electric energy was provided by a regular transmission line since 2013. It has an artesian well and/or piped. Fishing is also an important activity in the community. </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DSCN0094.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DSCN1536.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-pointsMutuacádeBaixo" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsMutuacádeBaixo"> Mutuacá de Baixo</h2>
+						<p class="text-muted custom-font-body">Souza et al. (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsMutuacádeBaixo">
+													<p class="custom-font-body">The Mutuacá de Baixo community was founded 90 years ago. In 2013, there were around 0 families,  none received a family allowance. Electric energy was provided by a regular transmission line since 2014. It has an artesian well and/or piped. Fishing is also an important activity in the community. </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DSCN0106.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DSCN9891.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-pointsMataquiri" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsMataquiri"> Mataquiri</h2>
+						<p class="text-muted custom-font-body">Souza et al. (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsMataquiri">
+													<p class="custom-font-body">The Mataquiri community was founded 30 years ago. In 2013, there were around 60 families,  none received a family allowance. Electric energy was provided by a regular transmission line since antes de 2008.  It has street lightning. It has an artesian well and/or piped. Fishing is also an important activity in the community. </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DJI_0783.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-pointsCaju" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsCaju"> Caju</h2>
+						<p class="text-muted custom-font-body">Souza et al. (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsCaju">
+													<p class="custom-font-body">The Caju community was founded 45 years ago. In 2013, there were around 80 families,  none received a family allowance. Electric energy was provided by a regular transmission line since 2004. It has an artesian well and/or piped. Fishing is also an important activity in the community. </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DSCN0450.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-pointsVacaria" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsVacaria"> Vacaria</h2>
+						<p class="text-muted custom-font-body">Souza et al. (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsVacaria">
+													<p class="custom-font-body">The Vacaria community was founded 90 years ago. In 2013, there were around 78 families,  none received a family allowance. Electric energy was provided by a regular transmission line since 2000.  It has street lightning. It has an artesian well and/or piped. Fishing is also an important activity in the community. </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DJI_0438.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DSCN0709.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DSCN9628.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-pointsCaripi" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsCaripi"> Caripi</h2>
+						<p class="text-muted custom-font-body">Souza et al. (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsCaripi">
+													<p class="custom-font-body">The Caripi community was founded 40 years ago. In 2013, there were around 68 families,  none received a family allowance. Electric energy was provided by a regular transmission line since 2010.  It has street lightning. It has an artesian well and/or piped. Fishing is also an important activity in the community. </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DSCN0728.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-pointsMatias" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsMatias"> Matias</h2>
+						<p class="text-muted custom-font-body">Souza et al. (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsMatias">
+													<p class="custom-font-body">The Matias community was founded 25 years ago. In 2013, there were around 136 families,  none received a family allowance. Electric energy was provided by a regular transmission line since 2010.  It has street lightning. It has an artesian well and/or piped. Fishing is also an important activity in the community. </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DJI_0523.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DSCN0755.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DSCN9662.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-pointsLivramento2" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsLivramento2"> Livramento 2</h2>
+						<p class="text-muted custom-font-body">Souza et al. (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsLivramento2">
+													<p class="custom-font-body">The Livramento 2 community was founded 45 years ago. In 2013, there were around 135 families,  none received a family allowance. Electric energy was provided by a regular transmission line since 2008. It has an artesian well and/or piped. Fishing is also an important activity in the community. </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DSCN0782.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-pointsBocubaranadaPedra" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsBocubaranadaPedra"> Bocubarana da Pedra</h2>
+						<p class="text-muted custom-font-body">Souza et al. (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsBocubaranadaPedra">
+													<p class="custom-font-body">The Bocubarana da Pedra community was founded 50 years ago. In 2013, there were around 90 families,  none received a family allowance. Electric energy was provided by a regular transmission line since 2008. It has an artesian well and/or piped. </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DSCN0812.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-pointsUmarizal" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsUmarizal"> Umarizal</h2>
+						<p class="text-muted custom-font-body">Souza et al. (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsUmarizal">
+													<p class="custom-font-body">The Umarizal community was founded 35 years ago. In 2013, there were around 50 families,  none received a family allowance. Electric energy was provided by a regular transmission line since 2000.  It has street lightning. It has an artesian well and/or piped. Fishing is also an important activity in the community. </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DJI_0833.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DSCN0857.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-pointsMupi" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsMupi"> Mupi</h2>
+						<p class="text-muted custom-font-body">Souza et al. (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsMupi">
+													<p class="custom-font-body">The Mupi community was founded 80 years ago. In 2013, there were around 900 families,  none received a family allowance. Electric energy was provided by a regular transmission line since 2004. It has an artesian well and/or piped. Fishing is also an important activity in the community. </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DJI_0916.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DSCN0879.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DSCN9854.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-pointsAruaru" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsAruaru"> Aruaru</h2>
+						<p class="text-muted custom-font-body">Souza et al. (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsAruaru">
+													<p class="custom-font-body">The Aruaru community was founded 65 years ago. In 2013, there were around 0 families,  none received a family allowance. Electric energy was provided by a regular transmission line since 2008.  It has street lightning. It has an artesian well and/or piped. Fishing is also an important activity in the community. </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DJI_0986.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-pointsVilaNossaSradaConceição" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsVilaNossaSradaConceição"> Vila Nossa Sra da Conceição</h2>
+						<p class="text-muted custom-font-body">Souza et al. (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsVilaNossaSradaConceição">
+													<p class="custom-font-body">The Vila Nossa Sra da Conceição community was founded 30 years ago. In 2013, there were around 75 families,  none received a family allowance. Electric energy was provided by a regular transmission line since 2009. It has an artesian well and/or piped. Fishing is also an important activity in the community. </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DJI_0041.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DSCN0893.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-pointsCantazal" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsCantazal"> Cantazal</h2>
+						<p class="text-muted custom-font-body">Souza et al. (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsCantazal">
+													<p class="custom-font-body">The Cantazal community was founded 100 years ago. In 2013, there were around 30 families,  none received a family allowance. Electric energy was provided by a regular transmission line since 2006. It has an artesian well and/or piped. Fishing is also an important activity in the community. </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DJI_0266.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DSCN0942.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-pointsMangabeira" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsMangabeira"> Mangabeira</h2>
+						<p class="text-muted custom-font-body">Souza et al. (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsMangabeira">
+													<p class="custom-font-body">The Mangabeira community was founded 75 years ago. In 2013, there were around 120 families,  none received a family allowance. Electric energy was provided by a regular transmission line since 2007.  It has street lightning. It has an artesian well and/or piped. Fishing is also an important activity in the community. </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DJI_0632.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DSCN1056.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DSCN9913.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-pointsVizânia" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsVizânia"> Vizânia</h2>
+						<p class="text-muted custom-font-body">Souza et al. (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsVizânia">
+													<p class="custom-font-body">The Vizânia community was founded 200 years ago. In 2013, there were around 70 families, 1 of them received a family allowance. Electric energy was provided by a regular transmission line since 2014.  It has street lightning. It has an artesian well and/or piped. Fishing is also an important activity in the community. </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DJI_0691.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DSCN1081.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DSCN0368.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-pointsFurtado" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsFurtado"> Furtado</h2>
+						<p class="text-muted custom-font-body">Souza et al. (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsFurtado">
+													<p class="custom-font-body">The Furtado community was founded 45 years ago. In 2013, there were around 110 families,  none received a family allowance. Electric energy was provided by a regular transmission line since 2014. It has an artesian well and/or piped. Fishing is also an important activity in the community. </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DJI_0791.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DSCN6774.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DSCN9951.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-pointsRioSantana" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsRioSantana"> Rio Santana</h2>
+						<p class="text-muted custom-font-body">Souza et al. (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsRioSantana">
+													<p class="custom-font-body">The Rio Santana community was founded 0 years ago. In 2013, there were around 105 families,  none received a family allowance. Electric energy was provided by a regular transmission line since NO. It has an artesian well and/or piped. Fishing is also an important activity in the community. </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DJI_0918.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DSCN1167.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DSCN0633.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-pointsSãoJosédoIcatu" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsSãoJosédoIcatu"> São José do Icatu</h2>
+						<p class="text-muted custom-font-body">Souza et al. (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsSãoJosédoIcatu">
+													<p class="custom-font-body">The São José do Icatu community was founded 0 years ago. In 2013, there were around 0 families,  none received a family allowance. There was no regular electricity transmission line. It has an artesian well and/or piped. </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+													<img class="report-img" src="DSCN6874.jpg"/>
+							<br/>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade modal-player" id="modal-report-pointsTambaí-Açu" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsTambaí-Açu"> Tambaí-Açu</h2>
+						<p class="text-muted custom-font-body">Souza et al. (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsTambaí-Açu">
+													<p class="custom-font-body">The Tambaí-Açu community was founded 120 years ago. In 2013, there were around 200 families,  none received a family allowance. Electric energy was provided by a regular transmission line since 2011.  It has street lightning. It has an artesian well and/or piped. Fishing is also an important activity in the community. </p>
+						
+						<!-- Function add Video Youtube/Vimeo -->
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-completed-description" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title custom-font-subtitle" id="modal-title-description"></h4>
+					</div>
+					<div class="modal-body">
+						<p class="custom-font-body" id="info-description"></p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-info" data-dismiss="modal">Ok</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="./jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1coAth-Bo7m99rnxOm2oOBB88AmaSbOk"></script>
+		
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		
+		<script type="text/javascript" src="./config.js"></script>
+		<script type="text/javascript" src="./publish.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+		<script type="text/javascript" src="./graphic.js"></script>
+		<script type="text/javascript" src="./player.js"></script>
+
+	</body>
+</html>
+
