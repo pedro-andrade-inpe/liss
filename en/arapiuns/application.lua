@@ -24,13 +24,13 @@ Application{
 		width = 2,
 		border = "blue",
 		icon = {
-			time = 60
+			time = 90
 		}
 	},
 	villages = View{
 		description = "Riverine settlements corresponded to indigenous tribes, villages, and communities that are inserted into public lands.",
 		select = {"Nome", "UC"},
-		icon = {"yellow_home", "brown_home"},-- "harbor"},--, "lake"},
+		icon = {"yellow_home", "green_home"},-- "harbor"},--, "lake"},
 		label = {"PAE Lago Grande", "Conservation Unit"},--, "TI Maró"},--, "Gleba Nova Olinda"},
 		report = function(cell)
 			local mreport = Report{
