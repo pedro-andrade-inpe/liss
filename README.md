@@ -1,4 +1,3 @@
-# liss
-Fieldwork webmapping applications of LiSS
+# Fieldwork webmapping applications of LiSS laboratory
 
-To run the application click [here](https://pedro-andrade-inpe.github.io/liss/en/fieldworkWebMap/index.html).
+To run the meta-application click [here](https://pedro-andrade-inpe.github.io/liss/en/fieldworkWebMap/index.html).
